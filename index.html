@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BareetDesign – Din visuelle partner i grafisk design</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container">
       <a href="#" class="logo">
-        <img id="site-logo" src="BareetDesignlogo.png" alt="BareetDesign logo" />
+        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo" />
       </a>
       <nav>
         <ul>
@@ -29,14 +27,13 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero" style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');">
     <div class="overlay"></div>
     <div class="hero-box">
       <h1>Din visuelle partner i grafisk design</h1>
-      <p>
-        Professionelt grafisk design skræddersyet til din virksomhed.<br />
-        Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.
-      </p>
+      <p>Professionelt grafisk design skræddersyet til din virksomhed.<br />
+      Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
+      <a href="#kontakt" class="btn">Kontakt os</a>
     </div>
   </section>
 
@@ -53,17 +50,15 @@
     </div>
   </section>
 
-  <!-- Om sektion -->
+  <!-- About -->
   <section class="about">
     <div class="container about-grid">
       <div class="about-image">
-        <img src="baggrundsbillede.png" alt="BareetDesign" />
+        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png" alt="BareetDesign" />
       </div>
       <div class="about-text">
         <h2>Hvem er bag BareetDesign?</h2>
-        <p>
-          BareetDesign er en dansk designvirksomhed med fokus på enkle, funktionelle og æstetiske løsninger. Vi tror på, at det bedste design taler for sig selv — uden unødvendig støj.
-        </p>
+        <p>BareetDesign er en dansk designvirksomhed med fokus på enkle, funktionelle og æstetiske løsninger. Vi tror på, at det bedste design taler for sig selv — uden unødvendig støj.</p>
         <a href="#" class="btn-outline">Se mere</a>
       </div>
     </div>
@@ -73,7 +68,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <img src="BareetDesignlogo.png" alt="BareetDesign logo" class="footer-logo" />
+        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo" class="footer-logo" />
         <p>Design, der taler for sig selv.<br />Skabt med omtanke og enkelthed.</p>
       </div>
       <div class="footer-col">
@@ -94,41 +89,5 @@
       <p>© 2025 BareetDesign. Alle rettigheder forbeholdes.</p>
     </div>
   </footer>
-
-  <!-- Supabase Script med fallback -->
-  <script>
-    document.addEventListener("DOMContentLoaded", async () => {
-      const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
-      const SUPABASE_KEY = "DIN_ANON_PUBLIC_KEY_HER"; // Erstat med korrekt key
-      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-      try {
-        const { data, error } = await supabase
-          .from("site_config")
-          .select("logo_url, hero_bg_url")
-          .limit(1)
-          .single();
-
-        if (error) throw error;
-
-        const logoEl = document.getElementById("site-logo");
-        const heroEl = document.getElementById("hero");
-
-        if (data.logo_url && logoEl) logoEl.src = data.logo_url;
-        else if (logoEl) logoEl.src = "BareetDesignlogo.png"; // fallback
-
-        if (data.hero_bg_url && heroEl) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`;
-        else if (heroEl) heroEl.style.backgroundImage = "url('baggrundsbillede.png')"; // fallback
-
-      } catch (err) {
-        console.warn("Supabase fetch fejlede, bruger fallback:", err.message);
-        const logoEl = document.getElementById("site-logo");
-        const heroEl = document.getElementById("hero");
-        if (logoEl) logoEl.src = "BareetDesignlogo.png";
-        if (heroEl) heroEl.style.backgroundImage = "url('baggrundsbillede.png')";
-      }
-    });
-  </script>
-
 </body>
 </html>
