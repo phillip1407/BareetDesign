@@ -12,7 +12,7 @@
   <header class="navbar">
     <div class="container">
       <a href="#" class="logo">
-        <img id="logo" src="" alt="BareetDesign logo" />
+        <img id="logo" src="placeholder-logo.png" alt="BareetDesign logo" />
       </a>
       <nav>
         <ul>
@@ -28,7 +28,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>Din visuelle partner i grafisk design</h1>
@@ -58,7 +58,7 @@
   <section class="about">
     <div class="container about-grid">
       <div class="about-image">
-        <img id="hero-bg" src="" alt="BareetDesign" />
+        <img id="hero-bg" src="placeholder-hero.png" alt="BareetDesign" />
       </div>
       <div class="about-text">
         <h2>Hvem er bag BareetDesign?</h2>
@@ -77,7 +77,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <img id="footer-logo" src="" alt="BareetDesign logo" class="footer-logo" />
+        <img id="footer-logo" src="placeholder-logo.png" alt="BareetDesign logo" class="footer-logo" />
         <p>Design, der taler for sig selv.<br />Skabt med omtanke og enkelthed.</p>
       </div>
       <div class="footer-col">
@@ -102,30 +102,30 @@
 <script>
   // Supabase setup
   const supabaseUrl = 'https://frordwotoqltgszesice.supabase.co';
-  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemljZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNzYwNzc5MjkyLCJleHAiOjIwNzYzNTUyOTJ9.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac';
+  const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemVzaWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3NzkyOTIsImV4cCI6MjA3NjM1NTI5Mn0.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac';
   const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-  // Hent site config
+  // Load site config
   async function loadSiteConfig() {
-    const { data, error } = await supabase
-      .from('site_config')
-      .select('*')
-      .limit(1)
-      .single();
+    try {
+      const { data, error } = await supabase
+        .from('site_config')
+        .select('*')
+        .limit(1)
+        .single();
 
-    if (error) {
-      console.error('Fejl ved hentning af site config:', error);
-      return;
+      if (error) throw error;
+
+      const logo = data.logo_url;
+      const hero = data.hero_bg_url;
+
+      document.getElementById('logo').src = logo;
+      document.getElementById('footer-logo').src = logo;
+      document.getElementById('hero-bg').src = hero;
+      document.getElementById('hero').style.backgroundImage = `url('${hero}')`;
+    } catch (err) {
+      console.error('Fejl ved hentning af site config:', err.message);
     }
-
-    const logo = data.logo_url;
-    const hero = data.hero_bg_url;
-
-    document.getElementById('logo').src = logo;
-    document.getElementById('footer-logo').src = logo;
-    document.getElementById('hero-bg').src = hero;
-
-    document.querySelector('.hero').style.backgroundImage = `url('${hero}')`;
   }
 
   loadSiteConfig();
@@ -138,15 +138,17 @@
     const email = form.querySelector('input[type="email"]').value;
     const phone = form.querySelector('input[type="tel"]').value;
 
-    const { data, error } = await supabase
-      .from('contact_form')
-      .insert([{ name, email, phone }]);
+    try {
+      const { data, error } = await supabase
+        .from('contact_form')
+        .insert([{ name, email, phone }]);
 
-    if (error) {
-      alert('Der skete en fejl: ' + error.message);
-    } else {
+      if (error) throw error;
+
       alert('Tak! Vi kontakter dig snart.');
       form.reset();
+    } catch (err) {
+      alert('Der skete en fejl: ' + err.message);
     }
   });
 </script>
