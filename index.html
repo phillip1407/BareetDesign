@@ -8,11 +8,15 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Header -->
   <header class="navbar">
     <div class="container">
       <a href="#" class="logo">
-        <img id="site-logo" src="BareerDesignlogo.png" alt="BareetDesign logo" />
+        <img 
+          id="site-logo" 
+          src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" 
+          alt="BareetDesign logo" 
+        />
       </a>
       <nav>
         <ul>
@@ -28,9 +32,13 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section 
+    class="hero" 
+    id="hero" 
+    style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');"
+  >
     <div class="overlay"></div>
-    <div class="hero-box">
+    <div class="hero-content">
       <h1>Din visuelle partner i grafisk design</h1>
       <p>
         Professionelt grafisk design skræddersyet til din virksomhed.<br />
@@ -53,11 +61,14 @@
     </div>
   </section>
 
-  <!-- About sektion -->
+  <!-- Om sektion -->
   <section class="about">
     <div class="container about-grid">
       <div class="about-image">
-        <img src="baggrundsbillede.png" alt="BareetDesign" />
+        <img 
+          src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png" 
+          alt="BareetDesign" 
+        />
       </div>
       <div class="about-text">
         <h2>Hvem er bag BareetDesign?</h2>
@@ -73,7 +84,11 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <img src="BareerDesignlogo.png" alt="BareetDesign logo" class="footer-logo" />
+        <img 
+          src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" 
+          alt="BareetDesign logo" 
+          class="footer-logo"
+        />
         <p>Design, der taler for sig selv.<br />Skabt med omtanke og enkelthed.</p>
       </div>
       <div class="footer-col">
@@ -95,11 +110,11 @@
     </div>
   </footer>
 
-  <!-- Supabase Script -->
+  <!-- Supabase script med fallback -->
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
-      const SUPABASE_KEY = "DIN_ANON_PUBLIC_KEY_HER"; // Erstat med korrekt anon key
+      const SUPABASE_KEY = "DIN_ANON_PUBLIC_KEY_HER"; // erstat med korrekt key
 
       const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -117,8 +132,9 @@
 
         if (data.logo_url && logoEl) logoEl.src = data.logo_url;
         if (data.hero_bg_url && heroEl) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`;
+
       } catch (err) {
-        console.warn("Supabase fetch fejlede:", err.message);
+        console.warn("Supabase fetch fejlede, fallback bruges automatisk");
       }
     });
   </script>
