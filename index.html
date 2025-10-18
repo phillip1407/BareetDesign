@@ -1,60 +1,157 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BareEtDesign</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <!-- Usynlig navbar (bevares for struktur) -->
-  <header class="navbar">
-    <div class="container">
-      <div class="logo">
-        <img src="logo.png" alt="BareEtDesign Logo">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BareetDesign – Din visuelle partner i grafisk design</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="navbar">
+      <div class="container">
+        <a href="#" class="logo">
+          <img
+            id="site-logo"
+            src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/BareetDesign%20logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85NGI5NjQ2ZC00ZTcxLTQ3ZDYtYjczZS1kMWE4NWJlODQzYzQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJCaWxsZWRlci9CYXJlZXREZXNpZ24gbG9nby5wbmciLCJpYXQiOjE3NjA4MTUzMDgsImV4cCI6NDkxNDQxNTMwOH0.UOw51vw8UyMWqVf1fb8lnnDkVgrytdq5aLiuDnpPSLg"
+            alt="BareetDesign logo"
+          />
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#">Forside</a></li>
+            <li><a href="#">Cases</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Om BareetDesign</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </nav>
+        <a href="#" class="cta">Få et gratis tilbud</a>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#">Forside</a></li>
-          <li><a href="#">Projekter</a></li>
-          <li><a href="#">Om os</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    </header>
 
-  <!-- Hero sektion -->
-  <section class="hero" style="background-image: url('baggrundsbillede.png');">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <img src="logo.png" alt="BareEtDesign" class="hero-logo">
-      <h1>Design, der taler for sig selv</h1>
-      <p>Vi skaber moderne, enkle og funktionelle designs, der gør indtryk.</p>
-      <a href="#kontakt" class="btn">Kontakt os</a>
-    </div>
-  </section>
+    <!-- Hero -->
+    <section
+      class="hero"
+      id="hero"
+      style="
+        background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/baggrundsbillede.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85NGI5NjQ2ZC00ZTcxLTQ3ZDYtYjczZS1kMWE4NWJlODQzYzQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJCaWxsZWRlci9iYWdncnVuZHNiaWxsZWRlLnBuZyIsImlhdCI6MTc2MDgyMTA0NSwiZXhwIjo0OTE0NDIxMDQ1fQ.Fcx_rMxdzUO7A4jv0kmBLRMbXXkkVaU2JrLO1AowHio');
+      "
+    >
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Din visuelle partner i grafisk design</h1>
+        <p>
+          Professionelt grafisk design skræddersyet til din virksomhed.<br />
+          Vi designer alt fra logoer og hjemmesider til kampagner og branding —
+          altid med dit brand og dine behov i fokus.
+        </p>
+        <a href="#kontakt" class="btn">Kontakt os</a>
+      </div>
+    </section>
 
-  <!-- Callback / kontakt sektion -->
-  <section id="kontakt" class="callback">
-    <div class="callback-box">
-      <h2>Få et gratis opkald</h2>
-      <p>Efterlad dine oplysninger, og vi kontakter dig hurtigst muligt.</p>
-      <form>
-        <input type="text" placeholder="Dit navn" required>
-        <input type="email" placeholder="Din e-mail" required>
-        <input type="tel" placeholder="Dit telefonnummer" required>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </section>
+    <!-- Kontaktformular -->
+    <section class="callback">
+      <div class="callback-box">
+        <p>
+          <strong>Brug for grafisk design hjælp?</strong> Bliv ringet op af
+          BareetDesign
+        </p>
+        <form>
+          <input type="text" placeholder="Dit navn" required />
+          <input type="email" placeholder="Din email" required />
+          <input type="tel" placeholder="Telefonnummer" required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 BareEtDesign. Alle rettigheder forbeholdes.</p>
-    <div class="footer-bottom">
-      <a href="#">Privatlivspolitik</a> | <a href="#">Cookies</a>
-    </div>
-  </footer>
-</body>
+    <!-- Om -->
+    <section class="about">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img
+            src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/baggrundsbillede.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85NGI5NjQ2ZC00ZTcxLTQ3ZDYtYjczZS1kMWE4NWJlODQzYzQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJCaWxsZWRlci9iYWdncnVuZHNiaWxsZWRlLnBuZyIsImlhdCI6MTc2MDgyMTA0NSwiZXhwIjo0OTE0NDIxMDQ1fQ.Fcx_rMxdzUO7A4jv0kmBLRMbXXkkVaU2JrLO1AowHio"
+            alt="BareetDesign"
+          />
+        </div>
+        <div class="about-text">
+          <h2>Hvem er bag BareetDesign?</h2>
+          <p>
+            BareetDesign er en dansk designvirksomhed med fokus på enkle,
+            funktionelle og æstetiske løsninger. Vi tror på, at det bedste design
+            er det, der taler for sig selv — uden unødvendig støj. Hos os får du
+            ærligt, gennemtænkt design, der styrker dit brand.
+          </p>
+          <a href="#" class="btn-outline">Se mere</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <img
+            src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/BareetDesign%20logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85NGI5NjQ2ZC00ZTcxLTQ3ZDYtYjczZS1kMWE4NWJlODQzYzQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJCaWxsZWRlci9CYXJlZXREZXNpZ24gbG9nby5wbmciLCJpYXQiOjE3NjA4MTUzMDgsImV4cCI6NDkxNDQxNTMwOH0.UOw51vw8UyMWqVf1fb8lnnDkVgrytdq5aLiuDnpPSLg"
+            alt="BareetDesign logo"
+            class="footer-logo"
+          />
+          <p>
+            Design, der taler for sig selv.<br />Skabt med omtanke og enkelthed.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h3>Kontakt</h3>
+          <p>
+            <a href="mailto:kontakt@bareetdesign.dk">kontakt@bareetdesign.dk</a>
+          </p>
+          <p><a href="tel:+4525252525">+45 25 25 25 25</a></p>
+        </div>
+        <div class="footer-col">
+          <h3>Følg os</h3>
+          <ul class="socials">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 BareetDesign. Alle rettigheder forbeholdes.</p>
+      </div>
+    </footer>
+
+    <script>
+      const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
+      const SUPABASE_KEY =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemVzaWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3NzkyOTIsImV4cCI6MjA3NjM1NTI5Mn0.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac";
+
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      async function loadSiteConfig() {
+        try {
+          const { data, error } = await supabase
+            .from("site_config")
+            .select("logo_url, hero_bg_url")
+            .limit(1)
+            .single();
+
+          if (error) throw error;
+
+          if (data) {
+            document.getElementById("site-logo").src = data.logo_url;
+            document.getElementById(
+              "hero"
+            ).style.backgroundImage = `url('${data.hero_bg_url}')`;
+          }
+        } catch (err) {
+          console.warn("Supabase fetch fejlede, bruger fallback:", err.message);
+        }
+      }
+
+      loadSiteConfig();
+    </script>
+  </body>
 </html>
