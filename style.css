@@ -13,35 +13,63 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar skjules helt, men beholdes teknisk */
+/* Navbar */
 .navbar {
-  background: transparent !important;
-  box-shadow: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* tynd hvid streg som separator */
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 5;
-  pointer-events: none; /* klik går igennem */
-}
-
-.navbar * {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Logo – synligt og stort */
-.logo {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 10;
+  transition: background 0.3s, border-color 0.3s;
 }
 
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s;
+}
+
+.navbar a:hover {
+  opacity: 0.7;
+}
+
+.cta {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background: #1e3560;
+}
+
+/* Logo */
 .logo img {
-  width: 300px;
+  width: 220px;
   height: auto;
-  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
+  display: block;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
 }
 
 /* Hero sektion */
@@ -70,7 +98,6 @@ body {
   max-width: 800px;
   padding: 2rem;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-  margin-top: 100px; /* for at give luft under logo */
 }
 
 .hero h1 {
@@ -102,7 +129,7 @@ body {
 .callback {
   background: #fff;
   padding: 3rem 1rem;
-  margin-top: -120px; /* trækker callback lidt op i billedet */
+  margin-top: -100px; /* overlap hero */
   z-index: 10;
   position: relative;
 }
@@ -182,7 +209,7 @@ body {
   }
 
   .logo img {
-    width: 220px;
+    width: 180px;
   }
 
   .callback {
