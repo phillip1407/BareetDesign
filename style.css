@@ -185,7 +185,7 @@ header .logo img {
 /* --- About sektion --- */
 .about-image img {
   width: auto;
-  max-width: 160px;
+  max-width: 220px; /* realistisk maksimum */
   height: auto;
   display: block;
   margin: 0 auto;
@@ -218,6 +218,13 @@ header .logo img {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: #ccc;
+}
+
+/* --- Alle andre billeder på siden får begrænset størrelse --- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* --- Responsive --- */
