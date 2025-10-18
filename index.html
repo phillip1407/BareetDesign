@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BareetDesign – Din visuelle partner i grafisk design</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" id="hero" style="background-image: url('baggrundsbillede.png');">
+  <section class="hero" id="hero">
     <div class="overlay"></div>
     <div class="hero-box">
       <h1>Din visuelle partner i grafisk design</h1>
@@ -93,6 +94,41 @@
       <p>© 2025 BareetDesign. Alle rettigheder forbeholdes.</p>
     </div>
   </footer>
+
+  <!-- Supabase Script med fallback -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
+      const SUPABASE_KEY = "DIN_ANON_PUBLIC_KEY_HER"; // Erstat med korrekt key
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      try {
+        const { data, error } = await supabase
+          .from("site_config")
+          .select("logo_url, hero_bg_url")
+          .limit(1)
+          .single();
+
+        if (error) throw error;
+
+        const logoEl = document.getElementById("site-logo");
+        const heroEl = document.getElementById("hero");
+
+        if (data.logo_url && logoEl) logoEl.src = data.logo_url;
+        else if (logoEl) logoEl.src = "BareetDesignlogo.png"; // fallback
+
+        if (data.hero_bg_url && heroEl) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`;
+        else if (heroEl) heroEl.style.backgroundImage = "url('baggrundsbillede.png')"; // fallback
+
+      } catch (err) {
+        console.warn("Supabase fetch fejlede, bruger fallback:", err.message);
+        const logoEl = document.getElementById("site-logo");
+        const heroEl = document.getElementById("hero");
+        if (logoEl) logoEl.src = "BareetDesignlogo.png";
+        if (heroEl) heroEl.style.backgroundImage = "url('baggrundsbillede.png')";
+      }
+    });
+  </script>
 
 </body>
 </html>
