@@ -16,7 +16,7 @@ body {
 /* --- Navbar --- */
 .navbar {
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   position: absolute;
   top: 0;
   width: 100%;
@@ -64,8 +64,7 @@ body {
 }
 
 /* --- Header-logo --- */
-header .logo img,
-.navbar .logo img {
+header .logo img {
   width: clamp(180px, 15vw, 300px);
   height: auto;
   display: block;
@@ -78,7 +77,6 @@ header .logo img,
   height: 100vh;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,21 +124,28 @@ header .logo img,
   background: #1e3560;
 }
 
-/* --- Callback sektion --- */
+/* --- Callback sektion (overlap) --- */
 .callback {
   background: #fff;
   padding: 3rem 1rem;
-  margin-top: -80px;
+  margin-top: -120px; /* tydeligt overlap */
   position: relative;
   z-index: 10;
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 -8px 25px rgba(0,0,0,0.05);
 }
 
 .callback-box {
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  transition: transform 0.3s;
+}
+
+.callback-box:hover {
+  transform: translateY(-5px);
 }
 
 .callback-box p {
@@ -230,7 +235,7 @@ header .logo img,
   }
 
   .callback {
-    margin-top: -60px;
+    margin-top: -80px;
   }
 
   .about-image img {
@@ -241,7 +246,7 @@ header .logo img,
     max-width: 140px;
   }
 
-  .callback-box img {
-    max-width: 120px;
+  .callback-box {
+    padding: 1.5rem;
   }
 }
