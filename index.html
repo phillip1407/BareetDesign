@@ -1,133 +1,74 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Maric Design</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-margin: 0;
-padding: 0;
-background-color: #f8f8f8;
-}
-header {
-background-color: #fff;
-padding: 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-header h1 {
-margin: 0;
-font-size: 24px;
-}
-nav a {
-margin-left: 20px;
-text-decoration: none;
-color: #333;
-font-weight: bold;
-}
-.content {
-padding: 40px 20px;
-max-width: 1200px;
-margin: auto;
-}
-h2 {
-font-size: 28px;
-margin-bottom: 20px;
-}
-p {
-font-size: 16px;
-line-height: 1.5;
-margin-bottom: 20px;
-}
-.cta-button {
-display: inline-block;
-padding: 12px 24px;
-background-color: #007bff;
-color: #fff;
-text-decoration: none;
-border-radius: 4px;
-font-weight: bold;
-}
-.contact-form {
-margin-top: 40px;
-background-color: #fff;
-padding: 20px;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-max-width: 600px;
-margin-left: auto;
-margin-right: auto;
-}
-.contact-form h3 {
-margin-top: 0;
-}
-.form-group {
-margin-bottom: 15px;
-}
-label {
-display: block;
-margin-bottom: 5px;
-font-weight: bold;
-}
-input, textarea {
-width: 100%;
-padding: 8px;
-box-sizing: border-box;
-}
-footer {
-background-color: #fff;
-padding: 20px;
-text-align: center;
-margin-top: 40px;
-box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BareetDesign – Din visuelle partner i grafisk design</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-<h1>Maric Design</h1>
-<nav>
-<a href="#cases">Cases</a>
-<a href="#services">Services</a>
-<a href="#kontakt">Kontakt</a>
-</nav>
-</header>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="bareetdesignlogo.png" alt="BareetDesign logo" />
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#">Forside</a></li>
+          <li><a href="#">Cases</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Om BareetDesign</a></li>
+          <li><a href="#">Kontakt</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="cta">Få et gratis tilbud</a>
+    </div>
+  </header>
 
-<div class="content">
-<section>
-<h2>Din Visuelle Partner i Grafisk Design</h2>
-<p>
-Professionelt grafisk design skræddersyet til din virksomhed. Jeg designer alt fra logoer og hjemmesider til kampagner og branding – altid med dit brand og dine behov i fokus.
-</p>
-<a class="cta-button" href="#kontakt">Få et gratis tilbud</a>
-</section>
-</div>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Din visuelle partner i grafisk design</h1>
+      <p>
+        Professionelt grafisk design skræddersyet til din virksomhed.  
+        Vi designer alt fra logoer og hjemmesider til kampagner og branding —  
+        altid med dit brand og dine behov i fokus.
+      </p>
+      <a href="#kontakt" class="btn">Kontakt os</a>
+    </div>
+  </section>
 
-<div class="contact-form" id="kontakt">
-<h3>Kontakt os</h3>
-<form>
-<div class="form-group">
-<label for="name">Dit navn</label>
-<input type="text" id="name" name="name" required />
-</div>
-<div class="form-group">
-<label for="email">Din email</label>
-<input type="email" id="email" name="email" required />
-</div>
-<div class="form-group">
-<label for="phone">Telefonnummer</label>
-<input type="tel" id="phone" name="phone" />
-</div>
-<button type="submit" class="cta-button">Send</button>
-</form>
-<p>Brug for noget grafisk design arbejde? Søg om design-støtte: <a href="mailto:kontakt@maricdesign.dk">kontakt@maricdesign.dk</a> | 55 25 50 23</p>
-</div>
+  <!-- Kontaktformular boks -->
+  <section class="callback">
+    <div class="callback-box">
+      <p><strong>Brug for grafisk design hjælp?</strong> Bliv ringet op af BareetDesign</p>
+      <form>
+        <input type="text" placeholder="Dit navn" required />
+        <input type="email" placeholder="Din email" required />
+        <input type="tel" placeholder="Telefonnummer" required />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
 
-<footer>
-<p>&copy; 2025 Maric Design. Alle rettigheder forbeholdes.</p>
-</footer>
+  <!-- Om BareetDesign -->
+  <section class="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="baggrundsbillede.png" alt="BareetDesign" />
+      </div>
+      <div class="about-text">
+        <h2>Hvem er bag BareetDesign?</h2>
+        <p>
+          BareetDesign er en dansk designvirksomhed, der fokuserer på at skabe
+          enkle, funktionelle og æstetiske løsninger.  
+          Vi tror på, at det bedste design er det, der taler for sig selv — uden unødvendig støj.
+        </p>
+        <a href="#" class="btn-outline">Se mere</a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
