@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar skjules men bevares i DOM */
+/* Navbar skjules helt, men beholdes teknisk */
 .navbar {
   background: transparent !important;
   box-shadow: none;
@@ -21,26 +21,27 @@ body {
   top: 0;
   width: 100%;
   z-index: 5;
-  pointer-events: none; /* gør den usynlig for klik */
+  pointer-events: none; /* klik går igennem */
 }
 
-.navbar .container,
-.navbar nav,
-.navbar ul,
-.navbar li,
-.navbar a,
-.navbar .cta {
+.navbar * {
   opacity: 0;
   visibility: hidden;
 }
 
-/* Logo vises stadig */
+/* Logo – synligt og stort */
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
 .logo img {
-  width: 220px; /* større logo */
+  width: 300px;
   height: auto;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4));
 }
 
 /* Hero sektion */
@@ -69,6 +70,7 @@ body {
   max-width: 800px;
   padding: 2rem;
   text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 100px; /* for at give luft under logo */
 }
 
 .hero h1 {
@@ -100,7 +102,7 @@ body {
 .callback {
   background: #fff;
   padding: 3rem 1rem;
-  margin-top: -100px; /* overlap hero */
+  margin-top: -120px; /* trækker callback lidt op i billedet */
   z-index: 10;
   position: relative;
 }
@@ -180,7 +182,7 @@ body {
   }
 
   .logo img {
-    width: 180px;
+    width: 220px;
   }
 
   .callback {
