@@ -216,3 +216,52 @@ body {
     margin-top: -80px;
   }
 }
+
+
+/* --- Fix: begræns størrelse på logoer/billeder andre steder end header --- */
+
+/* Behold header-logo stort */
+header .logo img,
+.navbar .logo img {
+  width: 300px;   /* behold størrelsen du bad om */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Alle andre logoer/billeder på siden skal være rimelige */
+footer .footer-logo,
+.about-image img,
+.callback-box img,
+.container img,
+section img {
+  width: auto !important;
+  max-width: 220px !important; /* realistisk maksimum for logoer */
+  height: auto !important;
+  display: block;
+  object-fit: contain;
+}
+
+/* Hvis der er logoer i kolonner (fx footer-col), gør dem lidt mindre */
+.footer .footer-col img {
+  max-width: 160px !important;
+}
+
+/* Hvis nogle billeder stadig får absurd stor højde, sørg for max-height */
+footer .footer-logo,
+.about-image img {
+  max-height: 120px;
+}
+
+/* Sikrer at responsive layout ikke pumper billeder op */
+@media (max-width: 768px) {
+  footer .footer-col img,
+  .about-image img,
+  footer .footer-logo {
+    max-width: 140px !important;
+    max-height: 90px;
+  }
+
+  header .logo img {
+    width: 220px;
+  }
+}
