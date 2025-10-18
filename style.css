@@ -80,6 +80,8 @@ header .logo img {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: var(--text-light);
   z-index: 1;
 }
 
@@ -87,36 +89,28 @@ header .logo img {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.35);
-  z-index: 1;
 }
 
-/* Hero-box */
-.hero-box {
+.hero-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 2rem 3rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  transform: translateY(50%);
+  max-width: 800px;
+  padding: 2rem;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
-.hero-box h1 {
-  color: var(--text-dark);
+.hero h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
 }
 
-.hero-box p {
-  color: var(--text-dark);
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+.hero p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   line-height: 1.5;
   margin-bottom: 2rem;
 }
 
-.hero-box .btn {
+.hero .btn {
   background: var(--primary);
   color: #fff;
   padding: 0.9rem 1.8rem;
@@ -126,15 +120,15 @@ header .logo img {
   transition: background 0.3s;
 }
 
-.hero-box .btn:hover {
+.hero .btn:hover {
   background: #1e3560;
 }
 
-/* --- Callback sektion --- */
+/* --- Callback sektion (overlap) --- */
 .callback {
   background: #fff;
   padding: 3rem 1rem;
-  margin-top: -120px;
+  margin-top: -120px; /* tydeligt overlap */
   position: relative;
   z-index: 10;
 }
@@ -232,17 +226,12 @@ header .logo img {
     width: clamp(150px, 30vw, 220px);
   }
 
-  .hero-box {
-    padding: 1.5rem 2rem;
-    transform: translateY(40%);
-  }
-
-  .hero-box h1 {
+  .hero h1 {
     font-size: clamp(1.5rem, 5vw, 2.3rem);
   }
 
-  .hero-box p {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  .hero p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   }
 
   .callback {
