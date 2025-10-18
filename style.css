@@ -4,7 +4,7 @@
   --text-dark: #111;
 }
 
-/* Generelt layout */
+/* --- Generelt layout --- */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -13,15 +13,14 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar */
+/* --- Navbar --- */
 .navbar {
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* separatorlinje */
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 10;
-  transition: background 0.3s, border-color 0.3s;
+  z-index: 20;
 }
 
 .navbar .container {
@@ -55,8 +54,8 @@ body {
   color: #fff;
   padding: 0.7rem 1.4rem;
   border-radius: 8px;
-  text-decoration: none;
   font-weight: 600;
+  text-decoration: none;
   transition: background 0.3s;
 }
 
@@ -64,16 +63,16 @@ body {
   background: #1e3560;
 }
 
-/* Header-logo */
+/* --- Header-logo --- */
 header .logo img,
 .navbar .logo img {
-  width: clamp(180px, 15vw, 300px); /* responsiv størrelse mellem 180px og 300px */
+  width: clamp(180px, 15vw, 300px); /* stort og responsivt */
   height: auto;
   display: block;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
 }
 
-/* Hero sektion */
+/* --- Hero sektion --- */
 .hero {
   position: relative;
   height: 100vh;
@@ -85,12 +84,13 @@ header .logo img,
   justify-content: center;
   text-align: center;
   color: var(--text-light);
+  z-index: 1;
 }
 
 .hero .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0,0,0,0.35);
 }
 
 .hero-content {
@@ -98,7 +98,7 @@ header .logo img,
   z-index: 2;
   max-width: 800px;
   padding: 2rem;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 3px 10px rgba(0,0,0,0.4);
 }
 
 .hero h1 {
@@ -126,20 +126,18 @@ header .logo img,
   background: #1e3560;
 }
 
-/* Callback sektion */
+/* --- Callback / Kontakt sektion --- */
 .callback {
   background: #fff;
   padding: 3rem 1rem;
-  margin-top: -100px; /* overlap hero */
-  z-index: 10;
+  margin-top: -80px; /* overlapper hero let */
   position: relative;
+  z-index: 10;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -8px 25px rgba(0,0,0,0.05);
 }
 
 .callback-box {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
@@ -171,15 +169,25 @@ header .logo img,
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
   font-size: 1rem;
+  transition: background 0.3s;
 }
 
 .callback-box button:hover {
   background: #1e3560;
 }
 
-/* Footer */
+/* --- About / Om sektion --- */
+.about-image img {
+  width: 100%;
+  max-width: 180px; /* naturlig størrelse */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* --- Footer --- */
 .footer {
   background: var(--primary);
   color: #fff;
@@ -193,36 +201,21 @@ header .logo img,
   text-decoration: none;
 }
 
+.footer .footer-logo {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
 .footer-bottom {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: #ccc;
 }
 
-/* --- Logo & billeder: harmoniske proportioner --- */
-
-/* Footer-logoer og About-logoer */
-.footer .footer-logo,
-.about-image img {
-  width: 100%;
-  max-width: 160px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-/* Callback-billeder (hvis brugt) */
-.callback-box img {
-  width: 100%;
-  max-width: 140px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-/* Responsive justering */
+/* --- Responsive --- */
 @media (max-width: 768px) {
   header .logo img {
     width: clamp(150px, 30vw, 220px);
@@ -236,16 +229,15 @@ header .logo img,
     font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   }
 
-  .footer .footer-logo,
+  .callback {
+    margin-top: -60px;
+  }
+
   .about-image img {
     max-width: 140px;
   }
 
-  .callback-box img {
-    max-width: 120px;
-  }
-
-  .callback {
-    margin-top: -80px;
+  .footer .footer-logo {
+    max-width: 140px;
   }
 }
