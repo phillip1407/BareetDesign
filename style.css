@@ -16,7 +16,7 @@ body {
 /* Navbar */
 .navbar {
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* tynd separator */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   position: absolute;
   top: 0;
   width: 100%;
@@ -64,9 +64,10 @@ body {
   background: #1e3560;
 }
 
-/* Logo */
-.logo img {
-  width: 220px;
+/* Header-logo */
+header .logo img,
+.navbar .logo img {
+  width: clamp(180px, 15vw, 300px); /* responsiv størrelse mellem 180px og 300px */
   height: auto;
   display: block;
   filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
@@ -101,12 +102,12 @@ body {
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   line-height: 1.5;
   margin-bottom: 2rem;
 }
@@ -198,55 +199,50 @@ body {
   color: #ccc;
 }
 
-/* --- Logo & billeder: Fixed --- */
-
-/* Header-logo stort */
-header .logo img,
-.navbar .logo img {
-  width: 300px;
-  max-width: 100%;
-  height: auto;
-}
+/* --- Logo & billeder: harmoniske proportioner --- */
 
 /* Footer-logoer og About-logoer */
 .footer .footer-logo,
 .about-image img {
+  width: 100%;
   max-width: 160px;
-  max-height: 120px;
   height: auto;
   display: block;
+  margin: 0 auto;
   object-fit: contain;
 }
 
-/* Callback-billeder */
+/* Callback-billeder (hvis brugt) */
 .callback-box img {
+  width: 100%;
   max-width: 140px;
-  max-height: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 /* Responsive justering */
 @media (max-width: 768px) {
+  header .logo img {
+    width: clamp(150px, 30vw, 220px);
+  }
+
   .hero h1 {
-    font-size: 2.3rem;
+    font-size: clamp(1.5rem, 5vw, 2.3rem);
   }
 
   .hero p {
-    font-size: 1.1rem;
-  }
-
-  header .logo img {
-    width: 220px;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   }
 
   .footer .footer-logo,
   .about-image img {
     max-width: 140px;
-    max-height: 90px;
   }
 
   .callback-box img {
     max-width: 120px;
-    max-height: 80px;
   }
 
   .callback {
