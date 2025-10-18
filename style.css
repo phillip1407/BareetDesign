@@ -16,7 +16,7 @@ body {
 /* Navbar */
 .navbar {
   background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* tynd hvid streg som separator */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15); /* tynd separator */
   position: absolute;
   top: 0;
   width: 100%;
@@ -75,7 +75,7 @@ body {
 /* Hero sektion */
 .hero {
   position: relative;
-  height: 100vh; /* fylder hele skærmen */
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -198,7 +198,33 @@ body {
   color: #ccc;
 }
 
-/* Responsiv justering */
+/* --- Logo & billeder: Fixed --- */
+
+/* Header-logo stort */
+header .logo img,
+.navbar .logo img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Footer-logoer og About-logoer */
+.footer .footer-logo,
+.about-image img {
+  max-width: 160px;
+  max-height: 120px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Callback-billeder */
+.callback-box img {
+  max-width: 140px;
+  max-height: 100px;
+}
+
+/* Responsive justering */
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.3rem;
@@ -208,60 +234,22 @@ body {
     font-size: 1.1rem;
   }
 
-  .logo img {
-    width: 180px;
+  header .logo img {
+    width: 220px;
+  }
+
+  .footer .footer-logo,
+  .about-image img {
+    max-width: 140px;
+    max-height: 90px;
+  }
+
+  .callback-box img {
+    max-width: 120px;
+    max-height: 80px;
   }
 
   .callback {
     margin-top: -80px;
-  }
-}
-
-
-/* --- Fix: begræns størrelse på logoer/billeder andre steder end header --- */
-
-/* Behold header-logo stort */
-header .logo img,
-.navbar .logo img {
-  width: 300px;   /* behold størrelsen du bad om */
-  max-width: 100%;
-  height: auto;
-}
-
-/* Alle andre logoer/billeder på siden skal være rimelige */
-footer .footer-logo,
-.about-image img,
-.callback-box img,
-.container img,
-section img {
-  width: auto !important;
-  max-width: 220px !important; /* realistisk maksimum for logoer */
-  height: auto !important;
-  display: block;
-  object-fit: contain;
-}
-
-/* Hvis der er logoer i kolonner (fx footer-col), gør dem lidt mindre */
-.footer .footer-col img {
-  max-width: 160px !important;
-}
-
-/* Hvis nogle billeder stadig får absurd stor højde, sørg for max-height */
-footer .footer-logo,
-.about-image img {
-  max-height: 120px;
-}
-
-/* Sikrer at responsive layout ikke pumper billeder op */
-@media (max-width: 768px) {
-  footer .footer-col img,
-  .about-image img,
-  footer .footer-logo {
-    max-width: 140px !important;
-    max-height: 90px;
-  }
-
-  header .logo img {
-    width: 220px;
   }
 }
