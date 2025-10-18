@@ -112,32 +112,32 @@
     </div>
   </footer>
 
-  <script>
-    const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
-    const SUPABASE_KEY = "din_supabase_key_her";
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
+  const SUPABASE_KEY = "DIN_SUPABASE_KEY_HER"; // Erstat med din rigtige key
 
-    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    async function loadSiteConfig() {
-      try {
-        const { data, error } = await supabase
-          .from("site_config")
-          .select("logo_url, hero_bg_url")
-          .limit(1)
-          .single();
+  try {
+    const { data, error } = await supabase
+      .from("site_config")
+      .select("logo_url, hero_bg_url")
+      .limit(1)
+      .single();
 
-        if (error) throw error;
+    if (error) throw error;
 
-        if (data) {
-          document.getElementById("site-logo").src = data.logo_url;
-          document.getElementById("hero").style.backgroundImage = `url('${data.hero_bg_url}')`;
-        }
-      } catch (err) {
-        console.warn("Supabase fetch fejlede, bruger fallback:", err.message);
-      }
+    if (data) {
+      // Tjek at elementerne findes
+      const logoEl = document.getElementById("site-logo");
+      const heroEl = document.getElementById("hero");
+
+      if (logoEl) logoEl.src = data.logo_url;
+      if (heroEl) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`;
     }
-
-    loadSiteConfig();
-  </script>
-</body>
-</html>
+  } catch (err) {
+    console.warn("Supabase fetch fejlede:", err.message);
+  }
+});
+</script>
