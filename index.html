@@ -12,7 +12,12 @@
   <header class="navbar">
     <div class="container">
       <a href="#" class="logo">
-        <img id="site-logo" src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesign%20logo.png" alt="BareetDesign logo" />
+        <img 
+          id="site-logo" 
+          src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesign%20logo.png" 
+          alt="BareetDesign logo"
+          data-fallback="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesign%20logo.png"
+        />
       </a>
       <nav>
         <ul>
@@ -28,7 +33,9 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" 
+           style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');"
+           data-fallback="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png">
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>Din visuelle partner i grafisk design</h1>
@@ -95,13 +102,20 @@
     </div>
   </footer>
 
-  <!-- Supabase Script -->
+  <!-- Supabase Script med fallback -->
   <script>
     document.addEventListener("DOMContentLoaded", async () => {
       const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
       const SUPABASE_KEY = "DIN_ANON_PUBLIC_KEY_HER"; // erstat med korrekt anon key
 
       const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      const logoEl = document.getElementById("site-logo");
+      const heroEl = document.getElementById("hero");
+
+      // gem fallback URLs
+      const logoFallback = logoEl.dataset.fallback;
+      const heroFallback = heroEl.dataset.fallback;
 
       try {
         const { data, error } = await supabase
@@ -110,15 +124,19 @@
           .limit(1)
           .single();
 
-        if (error) throw error;
-
-        const logoEl = document.getElementById("site-logo");
-        const heroEl = document.getElementById("hero");
-
-        if (data.logo_url && logoEl) logoEl.src = data.logo_url;
-        if (data.hero_bg_url && heroEl) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`;
+        if (!error && data) {
+          if (data.logo_url) logoEl.src = data.logo_url; else logoEl.src = logoFallback;
+          if (data.hero_bg_url) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`; 
+          else heroEl.style.backgroundImage = `url('${heroFallback}')`;
+        } else {
+          // fallback hvis supabase fejler
+          logoEl.src = logoFallback;
+          heroEl.style.backgroundImage = `url('${heroFallback}')`;
+        }
       } catch (err) {
         console.warn("Supabase fetch fejlede:", err.message);
+        logoEl.src = logoFallback;
+        heroEl.style.backgroundImage = `url('${heroFallback}')`;
       }
     });
   </script>
