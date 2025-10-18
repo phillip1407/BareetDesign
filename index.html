@@ -12,11 +12,7 @@
   <header class="navbar">
     <div class="container">
       <a href="#" class="logo">
-        <img
-          id="site-logo"
-          src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/BareetDesign%20logo.png"
-          alt="BareetDesign logo"
-        />
+        <img id="site-logo" src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesign%20logo.png" alt="BareetDesign logo" />
       </a>
       <nav>
         <ul>
@@ -24,7 +20,7 @@
           <li><a href="#">Cases</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Om BareetDesign</a></li>
-          <li><a href="#">Kontakt</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </nav>
       <a href="#kontakt" class="cta">Få et gratis tilbud</a>
@@ -32,11 +28,7 @@
   </header>
 
   <!-- Hero -->
-  <section
-    class="hero"
-    id="hero"
-    style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/baggrundsbillede.png');"
-  >
+  <section class="hero" id="hero">
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>Din visuelle partner i grafisk design</h1>
@@ -51,9 +43,7 @@
   <!-- Kontaktformular (overlap hero) -->
   <section class="callback" id="kontakt">
     <div class="callback-box">
-      <p>
-        <strong>Brug for grafisk design hjælp?</strong> Bliv ringet op af BareetDesign
-      </p>
+      <p><strong>Brug for grafisk design hjælp?</strong> Bliv ringet op af BareetDesign</p>
       <form>
         <input type="text" placeholder="Dit navn" required />
         <input type="email" placeholder="Din email" required />
@@ -63,14 +53,11 @@
     </div>
   </section>
 
-  <!-- Om -->
+  <!-- Om sektion -->
   <section class="about">
     <div class="container about-grid">
       <div class="about-image">
-        <img
-          src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/baggrundsbillede.png"
-          alt="BareetDesign"
-        />
+        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png" alt="BareetDesign" />
       </div>
       <div class="about-text">
         <h2>Hvem er bag BareetDesign?</h2>
@@ -86,11 +73,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-col">
-        <img
-          src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/sign/Billeder/BareetDesign%20logo.png"
-          alt="BareetDesign logo"
-          class="footer-logo"
-        />
+        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesign%20logo.png" alt="BareetDesign logo" class="footer-logo" />
         <p>Design, der taler for sig selv.<br />Skabt med omtanke og enkelthed.</p>
       </div>
       <div class="footer-col">
@@ -112,32 +95,32 @@
     </div>
   </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", async () => {
-  const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
-  const SUPABASE_KEY = "DIN_SUPABASE_KEY_HER"; // Erstat med din rigtige key
+  <!-- Supabase Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const SUPABASE_URL = "https://frordwotoqltgszesice.supabase.co";
+      const SUPABASE_KEY = "DIN_ANON_PUBLIC_KEY_HER"; // erstat med korrekt anon key
 
-  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-  try {
-    const { data, error } = await supabase
-      .from("site_config")
-      .select("logo_url, hero_bg_url")
-      .limit(1)
-      .single();
+      try {
+        const { data, error } = await supabase
+          .from("site_config")
+          .select("logo_url, hero_bg_url")
+          .limit(1)
+          .single();
 
-    if (error) throw error;
+        if (error) throw error;
 
-    if (data) {
-      // Tjek at elementerne findes
-      const logoEl = document.getElementById("site-logo");
-      const heroEl = document.getElementById("hero");
+        const logoEl = document.getElementById("site-logo");
+        const heroEl = document.getElementById("hero");
 
-      if (logoEl) logoEl.src = data.logo_url;
-      if (heroEl) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`;
-    }
-  } catch (err) {
-    console.warn("Supabase fetch fejlede:", err.message);
-  }
-});
-</script>
+        if (data.logo_url && logoEl) logoEl.src = data.logo_url;
+        if (data.hero_bg_url && heroEl) heroEl.style.backgroundImage = `url('${data.hero_bg_url}')`;
+      } catch (err) {
+        console.warn("Supabase fetch fejlede:", err.message);
+      }
+    });
+  </script>
+</body>
+</html>
