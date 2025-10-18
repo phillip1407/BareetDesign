@@ -126,11 +126,11 @@ header .logo img,
   background: #1e3560;
 }
 
-/* --- Callback / Kontakt sektion --- */
+/* --- Callback sektion --- */
 .callback {
   background: #fff;
   padding: 3rem 1rem;
-  margin-top: -80px; /* overlapper hero let */
+  margin-top: -80px;
   position: relative;
   z-index: 10;
   border-radius: 20px 20px 0 0;
@@ -177,10 +177,10 @@ header .logo img,
   background: #1e3560;
 }
 
-/* --- About / Om sektion --- */
+/* --- About sektion --- */
 .about-image img {
   width: auto;
-  max-width: 160px; /* normal størrelse */
+  max-width: 160px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -205,23 +205,14 @@ header .logo img,
   width: auto;
   max-width: 160px;
   height: auto;
-  margin: 0 auto 1rem auto;
   display: block;
+  margin: 0 auto 1rem auto;
 }
 
 .footer-bottom {
   margin-top: 1rem;
   font-size: 0.9rem;
   color: #ccc;
-}
-
-/* --- Callback billeder (hvis brugt) --- */
-.callback-box img {
-  width: auto;
-  max-width: 140px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 /* --- Responsive --- */
