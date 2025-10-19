@@ -12,7 +12,7 @@
   --primary: #142541;
   --text-light: #fff;
   --text-dark: #111;
-  --topbar-height: 44px;
+  --topbar-height: 36px; /* kompakt topbar */
   --line-height: 2px;
   --navbar-height: 72px;
 }
@@ -32,7 +32,7 @@ body{
 .topbar{
   height:var(--topbar-height);
   display:flex; justify-content:space-between; align-items:center;
-  padding:0 2rem;
+  padding:0 1rem; /* mindre vandret padding */
   background:transparent;
   color:#fff;
   font-size:0.95rem;
@@ -43,7 +43,7 @@ body{
   height:var(--line-height);
   background:rgba(255,255,255,0.5);
   width:100%;
-  margin-top:var(--topbar-height);
+  margin-top:0; /* fjern ekstra mellemrum */
 }
 
 /* Navbar */
@@ -51,9 +51,9 @@ body{
   height:var(--navbar-height);
   display:flex;
   justify-content:space-between; align-items:center;
-  padding:0 2rem;
+  padding:0 1rem; /* mindre vandret padding */
   background:transparent;
-  margin-top:var(--line-height);
+  margin-top:0; /* fjern mellemrum over navbar */
 }
 .navbar .logo img{width:clamp(160px,14vw,280px);}
 .navbar ul{
@@ -82,8 +82,9 @@ body{
 
 /* Hero */
 .hero{
-  min-height:100vh;
+  min-height: calc(100vh - var(--topbar-height) - var(--line-height) - var(--navbar-height)); 
   display:flex;align-items:center;justify-content:center;position:relative;text-align:center;color:#fff;
+  padding-top:0;
 }
 .hero-box{
   position:relative; z-index:2;
