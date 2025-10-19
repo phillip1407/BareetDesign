@@ -1,99 +1,103 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BareetDesign – Din visuelle partner i grafisk design</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
-  <script src="https://kit.fontawesome.com/a2d04f6d6a.js" crossorigin="anonymous"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BareetDesign – Din visuelle partner i grafisk design</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  </head>
 
-  <!-- Øverste topbar -->
-  <div class="topbar">
-    <div class="topbar-container">
-      <div class="socials">
-        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-      </div>
-      <div class="contact-info">
-        <span>kontakt@bareetdesign.dk</span>
-        <span class="divider">|</span>
-        <span>93 95 63 39</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="container">
-      <a href="#" class="logo">
-        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo" />
-      </a>
-      <nav>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img
+            src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png"
+            alt="BareetDesign Logo"
+          />
+        </div>
         <ul>
-          <li><a href="#">Forside</a></li>
-          <li><a href="#">Cases</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Om BareetDesign</a></li>
+          <li><a href="#services">Tjenester</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
-      </nav>
-      <a href="#kontakt" class="cta">Få et gratis tilbud</a>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');">
-    <div class="overlay"></div>
-    <div class="hero-box">
-      <h1>Din visuelle partner i grafisk design</h1>
-      <p>Professionelt grafisk design skræddersyet til din virksomhed.<br>
-      Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
-      <a href="#kontakt" class="btn">Kontakt os</a>
-    </div>
-  </section>
-
-  <!-- Kontaktformular -->
-  <section class="callback" id="kontakt">
-    <div class="callback-box">
-      <p><strong>Brug for grafisk design hjælp?</strong> Bliv ringet op af BareetDesign</p>
-      <form>
-        <input type="text" placeholder="Dit navn" required />
-        <input type="email" placeholder="Din email" required />
-        <input type="tel" placeholder="Telefonnummer" required />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo" class="footer-logo" />
-        <p>Design, der taler for sig selv.<br>Skabt med omtanke og enkelthed.</p>
+        <a href="#kontakt" class="cta">Kontakt os</a>
       </div>
-      <div class="footer-col">
-        <h3>Kontakt</h3>
-        <p><a href="mailto:kontakt@bareetdesign.dk">kontakt@bareetdesign.dk</a></p>
-        <p><a href="tel:+4593956339">93 95 63 39</a></p>
-      </div>
-      <div class="footer-col">
-        <h3>Følg os</h3>
-        <ul class="socials">
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 BareetDesign. Alle rettigheder forbeholdes.</p>
-    </div>
-  </footer>
+    </nav>
 
-</body>
+    <!-- Hero -->
+    <header
+      class="hero"
+      style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');"
+    >
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1>Din visuelle partner i grafisk design</h1>
+        <p>
+          Professionelt grafisk design skræddersyet til din virksomhed.<br />
+          Vi designer alt fra logoer og hjemmesider til kampagner og branding —
+          altid med dit brand i fokus.
+        </p>
+        <a href="#kontakt" class="btn">Kontakt os</a>
+      </div>
+    </header>
+
+    <!-- Callback sektion -->
+    <section class="callback">
+      <div class="callback-box">
+        <p>Vil du have et gratis designforslag? Udfyld her:</p>
+        <form>
+          <input type="text" placeholder="Dit navn" required />
+          <input type="email" placeholder="Din e-mail" required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Logos fra Supabase -->
+    <section id="logos" class="logos-section">
+      <div class="logos-container" id="logos-container"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <img
+        class="footer-logo"
+        src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png"
+        alt="BareetDesign logo"
+      />
+      <p>© 2025 BareetDesign — Alle rettigheder forbeholdes.</p>
+    </footer>
+
+    <script>
+      // --- Supabase setup ---
+      const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
+      const supabaseKey = "public-anon-key-her"; // ← INDSÆT DIN PUBLIC ANON KEY HER
+      const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+      async function loadLogos() {
+        const { data, error } = await supabase.from("logos").select("*");
+        if (error) {
+          console.error("Fejl ved hentning:", error);
+          return;
+        }
+
+        const container = document.getElementById("logos-container");
+        container.innerHTML = "";
+
+        data.forEach((logo) => {
+          const img = document.createElement("img");
+          img.src = logo.image_url;
+          img.alt = logo.name;
+          img.classList.add("about-image-logo");
+          container.appendChild(img);
+        });
+      }
+
+      loadLogos();
+    </script>
+  </body>
 </html>
