@@ -4,47 +4,6 @@
   --text-dark: #111;
 }
 
-/* --- Topbar --- */
-.topbar {
-  background: #f9f9f9;
-  border-bottom: 1px solid #ddd;
-  color: #111;
-  font-size: 0.9rem;
-}
-
-.topbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0.4rem 1.5rem;
-}
-
-.topbar .socials a {
-  color: #111;
-  text-decoration: none;
-  margin-right: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: color 0.3s;
-}
-
-.topbar .socials a:hover {
-  color: var(--primary);
-}
-
-.topbar .contact-info {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.topbar .divider {
-  color: #777;
-}
-
 /* --- Generelt layout --- */
 body {
   margin: 0;
@@ -59,7 +18,7 @@ body {
   background: transparent;
   border-bottom: 1px solid rgba(255,255,255,0.15);
   position: absolute;
-  top: 40px; /* flyt navbar under topbar */
+  top: 0;
   width: 100%;
   z-index: 20;
 }
@@ -169,7 +128,7 @@ header .logo img {
 .callback {
   background: #fff;
   padding: 3rem 1rem;
-  margin-top: -120px; /* tydeligt overlap */
+  margin-top: -120px;
   position: relative;
   z-index: 10;
 }
@@ -223,14 +182,29 @@ header .logo img {
   background: #1e3560;
 }
 
-/* --- About sektion --- */
-.about-image img {
-  width: auto;
-  max-width: 160px;
+/* --- Logos --- */
+.logos-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.logos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-image-logo {
+  width: 100px;
   height: auto;
-  display: block;
-  margin: 0 auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.about-image-logo:hover {
+  transform: scale(1.05);
 }
 
 /* --- Footer --- */
@@ -279,8 +253,8 @@ header .logo img {
     margin-top: -80px;
   }
 
-  .about-image img {
-    max-width: 140px;
+  .about-image-logo {
+    width: 80px;
   }
 
   .footer .footer-logo {
@@ -289,10 +263,5 @@ header .logo img {
 
   .callback-box {
     padding: 1.5rem;
-  }
-
-  .topbar-container {
-    flex-direction: column;
-    gap: 0.4rem;
   }
 }
