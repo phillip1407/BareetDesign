@@ -21,10 +21,11 @@
 body{
   font-family:"Poppins",sans-serif;
   color:var(--text-dark);
-  background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center top;
-  background-size:cover;
   margin:0;
   overflow-x:hidden;
+  background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center top;
+  background-size:cover;
+  background-attachment: fixed;
 }
 
 /* Topbar */
@@ -35,37 +36,28 @@ body{
   background:transparent;
   color:#fff;
   font-size:0.95rem;
-  position:absolute;
-  top:0; left:0; right:0;
-  z-index:60;
 }
 .topbar .socials{display:flex;align-items:center;gap:1rem;}
 .topbar .contact-info{display:flex;align-items:center;gap:0.5rem;font-weight:500;}
-
-/* Tynd streg under topbar */
 .topbar-line{
   height:var(--line-height);
   background:rgba(255,255,255,0.5);
-  position:absolute;
-  top:var(--topbar-height);
-  left:0;
-  right:0;
-  z-index:55;
+  width:100%;
+  margin-top:var(--topbar-height);
 }
 
 /* Navbar */
 .navbar{
-  height:var(--navbar-height); display:flex;
-  justify-content:space-between; align-items:center; padding:0 2rem;
+  height:var(--navbar-height);
+  display:flex;
+  justify-content:space-between; align-items:center;
+  padding:0 2rem;
   background:transparent;
-  position:absolute;
-  top: calc(var(--topbar-height) + var(--line-height));
-  left:0; right:0;
-  z-index:50;
+  margin-top:var(--line-height);
 }
 .navbar .logo img{width:clamp(160px,14vw,280px);}
 .navbar ul{
-  display:flex; list-style:none; gap:1.5rem; align-items:center; margin:0; padding:0;
+  display:flex; list-style:none; gap:1.5rem; align-items:center;
 }
 
 /* Navbar links */
@@ -73,7 +65,7 @@ body{
   color:#fff; text-decoration:none; font-weight:600; transition:0.2s;
 }
 .navbar ul li a:hover{
-  opacity:0.85; color:var(--primary);
+  color:var(--primary);
 }
 
 /* Dropdown */
@@ -89,24 +81,18 @@ body{
 }
 .dropbtn:hover { color:var(--primary); }
 
-/* Dropdown menu - skjult som standard */
+/* Dropdown menu */
 .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   min-width: 180px;
-  background: rgba(255,255,255,0.85); /* semi-transparent */
+  background: rgba(255,255,255,0.85);
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   border-radius: 8px;
   flex-direction: column;
   z-index: 10;
-  pointer-events: auto;
-}
-
-/* Dropdown items */
-.dropdown-content li {
-  list-style:none;
 }
 .dropdown-content li a{
   display:block;
@@ -185,7 +171,6 @@ body{
   }
   .hero-box{padding:1.5rem;}
   .about-image-logo{width:80px;}
-  .navbar ul{gap:1rem;}
 }
 </style>
 </head>
@@ -196,8 +181,6 @@ body{
   <div class="socials" id="socials-container"></div>
   <div class="contact-info">kontakt@bareetdesign.dk | 93 95 63 39</div>
 </div>
-
-<!-- Tynd streg -->
 <div class="topbar-line"></div>
 
 <!-- Navbar -->
