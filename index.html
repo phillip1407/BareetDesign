@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BareetDesign – Din visuelle partner i grafisk design</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
   <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 </head>
 <body>
+
   <!-- Topbar -->
   <div class="topbar">
     <div class="topbar-container">
       <div class="socials">
-        <a href="#"><img src="facebook-icon.png" alt="Facebook" /> Facebook</a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram" /> Instagram</a>
-        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" /> LinkedIn</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
       </div>
       <div class="contact-info">
-        <span>kontakt@bareetdesign.dk</span>
+        <span>info@bareetdesign.dk</span>
         <span class="divider">|</span>
-        <span>93 95 63 39</span>
+        <span>+45 12 34 56 78</span>
+      </div>
+      <div class="auth-buttons">
+        <button id="login-google">Login med Google</button>
+        <button id="login-facebook">Login med Facebook</button>
+        <button id="logout" style="display:none;">Logout</button>
       </div>
     </div>
   </div>
@@ -28,37 +35,35 @@
   <nav class="navbar">
     <div class="container">
       <div class="logo">
-        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo" />
+        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo">
       </div>
-      <nav>
-        <ul>
-          <li><a href="#services">Tjenester</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
+      <ul>
+        <li><a href="#services">Tjenester</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
       <a href="#kontakt" class="cta">Kontakt os</a>
     </div>
   </nav>
 
   <!-- Hero -->
-  <header class="hero">
+  <header class="hero" style="background-image:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');">
     <div class="overlay"></div>
     <div class="hero-box">
       <h1>Din visuelle partner i grafisk design</h1>
-      <p>Professionelt grafisk design skræddersyet til din virksomhed.<br />
-      Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
+      <p>Professionelt grafisk design skræddersyet til din virksomhed.<br>
+         Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
       <a href="#kontakt" class="btn">Kontakt os</a>
     </div>
   </header>
 
   <!-- Callback sektion -->
-  <section class="callback" id="kontakt">
+  <section class="callback">
     <div class="callback-box">
       <p>Vil du have et gratis designforslag? Udfyld her:</p>
       <form>
-        <input type="text" placeholder="Dit navn" required />
-        <input type="email" placeholder="Din e-mail" required />
+        <input type="text" placeholder="Dit navn" required>
+        <input type="email" placeholder="Din e-mail" required>
         <button type="submit">Send</button>
       </form>
     </div>
@@ -71,22 +76,56 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <img class="footer-logo" src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo" />
+    <img class="footer-logo" src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo">
     <p>© 2025 BareetDesign — Alle rettigheder forbeholdes.</p>
   </footer>
 
+  <!-- JavaScript -->
   <script>
+    // --- Supabase setup ---
     const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
     const supabaseKey = "DIN_PUBLIC_ANON_KEY_HER";
     const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
+    const loginGoogleBtn = document.getElementById("login-google");
+    const loginFacebookBtn = document.getElementById("login-facebook");
+    const logoutBtn = document.getElementById("logout");
+
+    loginGoogleBtn.addEventListener("click", () => {
+      supabase.auth.signInWithOAuth({ provider: "google" });
+    });
+
+    loginFacebookBtn.addEventListener("click", () => {
+      supabase.auth.signInWithOAuth({ provider: "facebook" });
+    });
+
+    logoutBtn.addEventListener("click", async () => {
+      await supabase.auth.signOut();
+      logoutBtn.style.display = "none";
+      loginGoogleBtn.style.display = "inline-block";
+      loginFacebookBtn.style.display = "inline-block";
+    });
+
+    supabase.auth.onAuthStateChange((event, session) => {
+      if(session) {
+        loginGoogleBtn.style.display = "none";
+        loginFacebookBtn.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+        loadLogos(); // hent logoer kun hvis login
+      } else {
+        logoutBtn.style.display = "none";
+        loginGoogleBtn.style.display = "inline-block";
+        loginFacebookBtn.style.display = "inline-block";
+      }
+    });
+
     async function loadLogos() {
       const { data, error } = await supabase.from("logos").select("*");
-      if (error) { console.error("Fejl ved hentning:", error); return; }
+      if (error) { console.error(error); return; }
 
       const container = document.getElementById("logos-container");
       container.innerHTML = "";
-      data.forEach((logo) => {
+      data.forEach(logo => {
         const img = document.createElement("img");
         img.src = logo.image_url;
         img.alt = logo.name;
@@ -94,8 +133,6 @@
         container.appendChild(img);
       });
     }
-
-    loadLogos();
   </script>
 </body>
 </html>
