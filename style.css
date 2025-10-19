@@ -2,307 +2,198 @@
   --primary: #142541;
   --text-light: #fff;
   --text-dark: #111;
-  --topbar-height: 44px; /* højde på topbaren */
-  --navbar-height: 72px;  /* højde af navbar */
+  --topbar-height: 44px;
+  --navbar-height: 72px;
 }
 
-/* --- Gør plads for fixed topbars --- */
+/* --- Body --- */
 body{
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: #fff;
-  color: var(--text-dark);
-  overflow-x: hidden;
-
-  /* padding-top = topbar + navbar */
-  padding-top: calc(var(--topbar-height) + var(--navbar-height) + 6px);
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  background:#fff;
+  color:var(--text-dark);
+  overflow-x:hidden;
+  padding-top: calc(var(--topbar-height) + var(--navbar-height));
 }
 
-/* --- Topbar (øverst) --- */
+/* --- Topbar --- */
 .topbar{
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top:0; left:0; right:0;
   height: var(--topbar-height);
-  background: #f8f8f8;
-  border-bottom: 1px solid #e6e6e6;
-  z-index: 60;
-  display: flex;
-  align-items: center;
-  font-size: 0.95rem;
-  color: #111;
+  background:#f8f8f8;
+  border-bottom:1px solid #e6e6e6;
+  z-index:60;
+  display:flex;
+  align-items:center;
+  font-size:0.95rem;
 }
 
 .topbar-container{
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width:100%;
+  max-width:1300px;
+  margin:0 auto;
+  padding:0 1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-/* socials (venstre) */
+/* Socials venstre */
 .topbar .socials{
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  display:flex;
+  align-items:center;
+  gap:0.8rem;
 }
-
 .topbar .socials a{
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: #111;
-  padding: 3px 6px;
-  border-radius: 6px;
-  transition: background .18s, color .18s;
-  font-size: 0.95rem;
+  display:inline-flex;
+  align-items:center;
+  gap:0.4rem;
+  text-decoration:none;
+  color:#111;
+  font-weight:500;
+  transition:0.2s;
 }
-
 .topbar .socials a:hover{
   color: var(--primary);
-  background: rgba(20,37,65,0.04);
 }
 
-/* kontaktinfo (højre) */
+/* Kontakt højre */
 .topbar .contact-info{
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: #111;
-  font-weight: 500;
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+  font-weight:500;
 }
+.topbar .divider{color:#777; margin:0 6px;}
 
-.topbar .divider{
-  color: #777;
-  margin: 0 6px;
-}
-
-/* --- Navbar (lige under topbar) --- */
+/* --- Navbar --- */
 .navbar{
   position: fixed;
   top: var(--topbar-height);
-  left: 0;
-  right: 0;
+  left:0; right:0;
   height: var(--navbar-height);
-  display: flex;
-  align-items: center;
-  z-index: 50;
-  background: rgba(0,0,0,0); /* transparent */
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(20,37,65,1);
+  z-index:50;
+  display:flex;
+  align-items:center;
 }
-
-/* container til navbar indhold */
 .navbar .container{
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  width:100%;
+  max-width:1300px;
+  margin:0 auto;
+  padding:0 1.5rem;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-
-/* logo */
 .navbar .logo img{
-  width: clamp(160px, 14vw, 280px);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+  width:clamp(160px,14vw,280px);
 }
-
-/* nav links */
 .navbar ul{
-  list-style: none;
-  display: flex;
-  gap: 1.25rem;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+  list-style:none;
+  display:flex;
+  gap:1.5rem;
+  margin:0;
+  padding:0;
 }
-
-.navbar a{
-  color: var(--text-light);
-  text-decoration: none;
-  font-weight: 600;
-  transition: opacity .18s, color .18s;
+.navbar ul li a{
+  text-decoration:none;
+  color:#fff;
+  font-weight:600;
 }
-
-.navbar a:hover{
-  opacity: 0.85;
-  color: #fff;
-}
-
-/* CTA */
+.navbar ul li a:hover{opacity:0.8;}
 .cta{
   background: var(--primary);
-  color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
+  color:#fff;
+  padding:0.6rem 1rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
 }
+.cta:hover{filter:brightness(0.95);}
 
-.cta:hover{
-  filter: brightness(.95);
-}
-
-/* --- Hero sektion --- */
+/* --- Hero --- */
 .hero{
   position: relative;
-  height: calc(100vh - (var(--topbar-height) + 20px));
-  background: var(--primary) center/cover no-repeat; /* fallback farve */
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  text-align: center;
-  margin-top: 0;
-}
-
-.hero .overlay{
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-/* gennemsigtig boks i hero */
-.hero-box{
-  position: relative;
-  z-index: 2;
-  max-width: 820px;
-  width: calc(100% - 3rem);
-  background: rgba(255,255,255,0.8);
-  padding: 2rem 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-  transform: translateY(25%);
-  color: var(--text-dark);
-  text-align: center;
-}
-
-.hero-box h1{
-  margin: 0 0 0.6rem 0;
-  font-size: clamp(1.6rem, 4.5vw, 2.6rem);
-}
-
-.hero-box p{
-  margin: 0 0 1rem 0;
-  font-size: clamp(1rem, 2.4vw, 1.15rem);
-  line-height: 1.5;
-}
-
-/* --- Callback sektion --- */
-.callback{
-  background: #fff;
-  padding: 3rem 1rem;
-  margin-top: -120px;
-  position: relative;
-  z-index: 10;
-}
-
-.callback-box{
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
-  background: #fff;
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.12);
-}
-
-/* --- Logos sektion (fra DB) --- */
-.logos-section{
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-.logos-container{
+  height: calc(100vh - (var(--topbar-height) + var(--navbar-height)));
+  background-size:cover;
+  background-position:center;
   display:flex;
-  gap: 1.5rem;
+  align-items:center;
   justify-content:center;
-  flex-wrap:wrap;
+  text-align:center;
+  color:#fff;
 }
+.hero .overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+  z-index:1;
+}
+.hero-box{
+  position:relative;
+  z-index:2;
+  max-width:820px;
+  background: rgba(255,255,255,0.85);
+  padding:2rem 2.5rem;
+  border-radius:16px;
+  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+  color:var(--text-dark);
+  text-align:center;
+}
+.hero-box h1{margin:0 0 0.6rem 0;font-size:clamp(1.6rem,4.5vw,2.6rem);}
+.hero-box p{margin:0 0 1rem 0;font-size:clamp(1rem,2.4vw,1.15rem);line-height:1.5;}
+.hero-box .btn{
+  background:var(--primary);
+  color:#fff;
+  padding:0.8rem 1.5rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+.hero-box .btn:hover{filter:brightness(0.95);}
 
-.about-image-logo{
-  max-width: 160px;
-  width: 100%;
-  height:auto;
-  object-fit:contain;
-  transition: transform .25s ease;
+/* --- Callback --- */
+.callback{background:#fff;padding:3rem 1rem;}
+.callback-box{
+  max-width:500px;
+  margin:0 auto;
+  text-align:center;
+  padding:2rem;
+  border-radius:20px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.12);
 }
+.callback-box form{display:flex;flex-direction:column;gap:1rem;}
+.callback-box input{padding:0.8rem;border-radius:8px;border:1px solid #ddd;font-size:1rem;}
+.callback-box button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:0.9rem;
+  border-radius:8px;
+  cursor:pointer;
+}
+.callback-box button:hover{filter:brightness(0.95);}
 
-.about-image-logo:hover{
-  transform: scale(1.05);
-}
+/* --- Logos --- */
+.logos-section{padding:4rem 2rem;text-align:center;}
+.logos-container{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;}
+.about-image-logo{width:100px;height:auto;transition:transform 0.25s;}
+.about-image-logo:hover{transform:scale(1.05);}
 
 /* --- Footer --- */
-.footer{
-  background: var(--primary);
-  color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-}
+.footer{background:var(--primary);color:#fff;text-align:center;padding:2rem 1rem;}
+.footer-logo{width:160px;height:auto;margin:0 auto 1rem auto;}
 
 /* --- Responsiv --- */
-@media (max-width: 900px){
-  :root{
-    --topbar-height: 56px;
-    --navbar-height: 74px;
-  }
-
-  .topbar .socials a{
-    font-size: 0.92rem;
-  }
-
-  .topbar-container{
-    padding: 0 .9rem;
-  }
-
-  .navbar .container{
-    padding: 0 .9rem;
-  }
-
-  .hero-box{
-    transform: translateY(15%);
-    padding: 1.4rem 1.25rem;
-  }
-
-  .about-image-logo{ width: 80px; }
+@media(max-width:900px){
+  .hero-box{padding:1.5rem 1.25rem;}
+  .about-image-logo{width:80px;}
 }
-
-@media (max-width: 480px){
-  .topbar-container{
-    flex-direction: column;
-    gap: 6px;
-    align-items:center;
-    padding:6px 12px;
-  }
-
-  .topbar .socials{
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    justify-content:center;
-  }
-
-  .navbar ul{
-    display:none; /* du kan tilføje hamburger menu senere */
-  }
-
-  .navbar .container{
-    justify-content: space-between;
-  }
-
-  body{
-    padding-top: calc(var(--topbar-height) + var(--navbar-height));
-  }
+@media(max-width:480px){
+  .topbar-container{flex-direction:column;gap:4px;align-items:center;}
+  .topbar .socials{flex-wrap:wrap;justify-content:center;}
+  .navbar ul{display:none;}
+  body{padding-top:calc(var(--topbar-height) + var(--navbar-height));}
 }
