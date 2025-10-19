@@ -29,10 +29,9 @@ body{
 
 /* Topbar */
 .topbar{
-  position:fixed; top:0; left:0; right:0;
   height:var(--topbar-height);
   display:flex; justify-content:space-between; align-items:center;
-  padding:0 2rem; z-index:60;
+  padding:0 2rem;
   background:transparent;
   color:#fff;
   font-size:0.95rem;
@@ -42,17 +41,14 @@ body{
 
 /* Tynd streg under topbar */
 .topbar-line{
-  position:fixed; top:var(--topbar-height); left:0; right:0;
   height:var(--line-height);
   background:rgba(255,255,255,0.5);
-  z-index:55;
 }
 
 /* Navbar */
 .navbar{
-  position:fixed; top: calc(var(--topbar-height) + var(--line-height)); left:0; right:0;
   height:var(--navbar-height); display:flex;
-  justify-content:space-between; align-items:center; padding:0 2rem; z-index:50;
+  justify-content:space-between; align-items:center; padding:0 2rem;
   background:transparent;
 }
 .navbar .logo img{width:clamp(160px,14vw,280px);}
