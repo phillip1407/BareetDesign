@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>BareetDesign – Din visuelle partner i grafisk design</title>
-<link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
+<link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BDhjemmesidetoplogo.png" type="image/png">
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
 <style>
@@ -25,7 +25,7 @@ body{
   overflow-x:hidden;
   background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center top;
   background-size:cover;
-  background-attachment: fixed;
+  background-attachment: fixed; /* holder baggrund på plads */
 }
 
 /* Topbar */
@@ -66,51 +66,6 @@ body{
 }
 .navbar ul li a:hover{
   color:var(--primary);
-}
-
-/* Dropdown */
-.dropdown {
-  position: relative;
-}
-.dropbtn {
-  cursor:pointer;
-  color:#fff;
-  font-weight:600;
-  text-decoration:none;
-  transition: color 0.2s;
-}
-.dropbtn:hover { color:var(--primary); }
-
-/* Dropdown menu */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 180px;
-  background: rgba(255,255,255,0.85);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  border-radius: 8px;
-  flex-direction: column;
-  z-index: 10;
-}
-.dropdown-content li a{
-  display:block;
-  padding:0.75rem 1rem;
-  font-weight:500;
-  color: var(--text-dark);
-  text-decoration:none;
-  border-radius:6px;
-  transition: background 0.2s, color 0.2s;
-}
-.dropdown-content li a:hover{
-  background: var(--primary);
-  color:#fff;
-}
-
-/* Vis dropdown kun når man hover over Services */
-.dropdown:hover .dropdown-content{
-  display:flex;
 }
 
 /* CTA knap */
@@ -164,11 +119,6 @@ body{
     flex-direction:column;
     gap:0;
   }
-  .dropdown-content{
-    position:static;
-    box-shadow:none;
-    display:none;
-  }
   .hero-box{padding:1.5rem;}
   .about-image-logo{width:80px;}
 }
@@ -190,13 +140,7 @@ body{
   </div>
   <ul class="nav-links">
     <li><a href="#forside">Forside</a></li>
-    <li class="dropdown">
-      <a href="#services" class="dropbtn">Services</a>
-      <ul class="dropdown-content">
-        <li><a href="#grafisk">Grafisk Design</a></li>
-        <li><a href="#web">Web Design</a></li>
-      </ul>
-    </li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#cases">Cases</a></li>
     <li><a href="#om">Om BareetDesign</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
