@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>BareetDesign – Din visuelle partner i grafisk design</title>
-<link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
+<link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BDhjemmesidetoplogo.png" type="image/png">
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
 <style>
@@ -22,9 +22,9 @@ body{
   font-family:"Poppins",sans-serif;
   color:var(--text-dark);
   background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center top;
-  background-size: contain; /* Hele billedet vises */
+  background-size: contain; 
   background-attachment: scroll;
-  margin: 0;
+  margin:0;
   overflow-x:hidden;
 }
 
@@ -37,9 +37,7 @@ body{
   color:#fff;
   font-size:0.95rem;
   position:absolute;
-  top:0;
-  left:0;
-  right:0;
+  top:0; left:0; right:0;
   z-index:60;
 }
 .topbar .socials{display:flex;align-items:center;gap:1rem;}
@@ -63,14 +61,15 @@ body{
   background:transparent;
   position:absolute;
   top: calc(var(--topbar-height) + var(--line-height));
-  left:0;
-  right:0;
+  left:0; right:0;
   z-index:50;
 }
 .navbar .logo img{width:clamp(160px,14vw,280px);}
 .navbar ul{
   display:flex; list-style:none; gap:1.5rem; align-items:center; margin:0; padding:0;
 }
+
+/* Navbar links */
 .navbar ul li a{
   color:#fff; text-decoration:none; font-weight:600; transition:0.2s;
 }
@@ -80,39 +79,41 @@ body{
 
 /* Dropdown */
 .dropdown { position: relative; }
-.dropbtn { cursor:pointer; }
+.dropbtn { cursor:pointer; color:#fff; font-weight:600; text-decoration:none; transition:0.2s; }
+.dropbtn:hover { color:var(--primary); }
+
 .dropdown-content {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #fff;
   min-width: 180px;
   border-radius: 8px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.85); /* semitransparent */
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
   transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
   z-index: 10;
 }
-.dropdown-content li {list-style:none;}
+.dropdown-content li { list-style:none; }
 .dropdown-content li a{
-  display: block;
-  padding: 0.75rem 1rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  text-decoration: none;
+  display:block;
+  padding:0.75rem 1rem;
+  font-weight:500;
+  color:var(--text-dark);
+  text-decoration:none;
+  border-radius:6px;
   transition: background 0.2s, color 0.2s;
 }
 .dropdown-content li a:hover{
-  background: var(--primary);
-  color: #fff;
-  border-radius: 8px;
+  background:var(--primary);
+  color:#fff;
 }
 .dropdown:hover .dropdown-content{
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
 }
 
 /* CTA knap */
@@ -181,102 +182,102 @@ body{
 </head>
 <body>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="socials" id="socials-container"></div>
-    <div class="contact-info">kontakt@bareetdesign.dk | 93 95 63 39</div>
+<!-- Topbar -->
+<div class="topbar">
+  <div class="socials" id="socials-container"></div>
+  <div class="contact-info">kontakt@bareetdesign.dk | 93 95 63 39</div>
+</div>
+
+<!-- Tynd streg -->
+<div class="topbar-line"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo">
   </div>
+  <ul class="nav-links">
+    <li><a href="#forside">Forside</a></li>
+    <li class="dropdown">
+      <a href="#services" class="dropbtn">Services</a>
+      <ul class="dropdown-content">
+        <li><a href="#grafisk">Grafisk Design</a></li>
+        <li><a href="#web">Web Design</a></li>
+      </ul>
+    </li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#om">Om BareetDesign</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="cta">Kontakt os</a>
+</nav>
 
-  <!-- Tynd streg -->
-  <div class="topbar-line"></div>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-box">
+    <h1>Din visuelle partner i grafisk design</h1>
+    <p>Professionelt grafisk design skræddersyet til din virksomhed.<br>Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
+    <a href="#kontakt" class="btn">Kontakt os</a>
+  </div>
+</section>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo">
-    </div>
-    <ul class="nav-links">
-      <li><a href="#forside">Forside</a></li>
-      <li class="dropdown">
-        <a href="#services" class="dropbtn">Services</a>
-        <ul class="dropdown-content">
-          <li><a href="#grafisk">Grafisk Design</a></li>
-          <li><a href="#web">Web Design</a></li>
-        </ul>
-      </li>
-      <li><a href="#cases">Cases</a></li>
-      <li><a href="#om">Om BareetDesign</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
-    <a href="#kontakt" class="cta">Kontakt os</a>
-  </nav>
+<!-- Callback -->
+<section class="callback">
+  <div class="callback-box">
+    <p>Vil du have et gratis designforslag? Udfyld her:</p>
+    <form>
+      <input type="text" placeholder="Dit navn" required>
+      <input type="email" placeholder="Din e-mail" required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+</section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-box">
-      <h1>Din visuelle partner i grafisk design</h1>
-      <p>Professionelt grafisk design skræddersyet til din virksomhed.<br>Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
-      <a href="#kontakt" class="btn">Kontakt os</a>
-    </div>
-  </section>
+<!-- Logos fra Supabase -->
+<section id="logos" class="logos-section">
+  <div class="logos-container" id="logos-container"></div>
+</section>
 
-  <!-- Callback -->
-  <section class="callback">
-    <div class="callback-box">
-      <p>Vil du have et gratis designforslag? Udfyld her:</p>
-      <form>
-        <input type="text" placeholder="Dit navn" required>
-        <input type="email" placeholder="Din e-mail" required>
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </section>
+<!-- Footer -->
+<footer class="footer">
+  <img class="footer-logo" src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo">
+  <p>© 2025 BareetDesign — Alle rettigheder forbeholdes.</p>
+</footer>
 
-  <!-- Logos fra Supabase -->
-  <section id="logos" class="logos-section">
-    <div class="logos-container" id="logos-container"></div>
-  </section>
+<script>
+const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemVzaWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3NzkyOTIsImV4cCI6MjA3NjM1NTI5Mn0.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac";
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-  <!-- Footer -->
-  <footer class="footer">
-    <img class="footer-logo" src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo">
-    <p>© 2025 BareetDesign — Alle rettigheder forbeholdes.</p>
-  </footer>
+async function loadLogos(){
+  const { data, error } = await supabase.from("logos").select("*").order("created_at",{ascending:true});
+  if(error){console.error(error);return;}
+  const container = document.getElementById("logos-container");
+  container.innerHTML="";
+  data.forEach(logo=>{
+    const img = document.createElement("img");
+    img.src = logo.image_url;
+    img.alt = logo.name;
+    img.classList.add("about-image-logo");
+    container.appendChild(img);
+  });
+}
+loadLogos();
 
-  <script>
-    const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
-    const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemVzaWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3NzkyOTIsImV4cCI6MjA3NjM1NTI5Mn0.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac";
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
-
-    async function loadLogos(){
-      const { data, error } = await supabase.from("logos").select("*").order("created_at",{ascending:true});
-      if(error){console.error(error);return;}
-      const container = document.getElementById("logos-container");
-      container.innerHTML="";
-      data.forEach(logo=>{
-        const img = document.createElement("img");
-        img.src = logo.image_url;
-        img.alt = logo.name;
-        img.classList.add("about-image-logo");
-        container.appendChild(img);
-      });
-    }
-    loadLogos();
-
-    async function loadSocials(){
-      const { data, error } = await supabase.from("socials").select("*");
-      if(error){console.error(error);return;}
-      const container = document.getElementById("socials-container");
-      container.innerHTML="";
-      data.forEach(item=>{
-        const a = document.createElement("a");
-        a.href=item.link;
-        a.target="_blank";
-        a.textContent=item.name;
-        container.appendChild(a);
-      });
-    }
-    loadSocials();
-  </script>
+async function loadSocials(){
+  const { data, error } = await supabase.from("socials").select("*");
+  if(error){console.error(error);return;}
+  const container = document.getElementById("socials-container");
+  container.innerHTML="";
+  data.forEach(item=>{
+    const a = document.createElement("a");
+    a.href=item.link;
+    a.target="_blank";
+    a.textContent=item.name;
+    container.appendChild(a);
+  });
+}
+loadSocials();
+</script>
 </body>
 </html>
