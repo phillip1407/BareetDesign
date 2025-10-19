@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>BareetDesign – Din visuelle partner i grafisk design</title>
-<link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BDhjemmesidetoplogo.png" type="image/png">
+<link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
 <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
 
 <style>
@@ -63,34 +63,43 @@ body{
 }
 
 /* Dropdown */
-.dropdown{position:relative;}
-.dropbtn{cursor:pointer;}
-.dropdown-content{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  min-width:180px;
-  box-shadow:0 8px 16px rgba(0,0,0,0.2);
-  border-radius:8px;
-  z-index:10;
+.dropdown {
+  position: relative;
 }
-.dropdown-content li{list-style:none;}
+.dropbtn {cursor:pointer;}
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  z-index: 10;
+}
+.dropdown-content li {list-style:none;}
 .dropdown-content li a{
-  color:var(--text-dark);
-  padding:0.75rem 1rem;
-  display:block;
-  text-decoration:none;
-  font-weight:500;
+  display: block;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
 }
 .dropdown-content li a:hover{
-  background:var(--primary);
-  color:#fff;
-  border-radius:8px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 8px;
 }
+/* Vis dropdown ved hover med animation */
 .dropdown:hover .dropdown-content{
-  display:block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 /* CTA knap */
@@ -148,6 +157,9 @@ body{
   .dropdown-content{
     position:static;
     box-shadow:none;
+    transform:none;
+    opacity:1;
+    visibility:visible;
   }
   .hero-box{padding:1.5rem;}
   .about-image-logo{width:80px;}
