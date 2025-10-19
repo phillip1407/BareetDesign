@@ -1,109 +1,120 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BareetDesign – Din visuelle partner i grafisk design</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
-  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BareetDesign – Din visuelle partner i grafisk design</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" type="image/png">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  </head>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="topbar-container">
-      <div class="socials">
-        <a href="#"><img src="https://img.icons8.com/ios-filled/16/111/facebook.png"/>Facebook</a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/16/111/instagram-new.png"/>Instagram</a>
-        <a href="#"><img src="https://img.icons8.com/ios-filled/16/111/twitter.png"/>Twitter</a>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="topbar-container">
+        <div class="socials">
+          <a href="#"><span>Facebook</span></a>
+          <a href="#"><span>Instagram</span></a>
+          <a href="#"><span>LinkedIn</span></a>
+        </div>
+        <div class="contact-info">
+          <span>Email: info@bareetdesign.dk</span>
+          <span class="divider">|</span>
+          <span>Telefon: +45 12 34 56 78</span>
+        </div>
       </div>
-      <div class="contact-info">
-        <span>✉ info@bareetdesign.dk</span>
-        <span class="divider">|</span>
-        <span>📞 +45 12 34 56 78</span>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img
+            src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png"
+            alt="BareetDesign Logo"
+          />
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#services">Tjenester</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+        <a href="#kontakt" class="cta">Kontakt os</a>
       </div>
-    </div>
-  </div>
+    </nav>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container">
-      <div class="logo">
-        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo" />
+    <!-- Hero -->
+    <header
+      class="hero"
+      style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');"
+    >
+      <div class="overlay"></div>
+      <div class="hero-box">
+        <h1>Din visuelle partner i grafisk design</h1>
+        <p>
+          Professionelt grafisk design skræddersyet til din virksomhed.<br />
+          Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.
+        </p>
+        <a href="#kontakt" class="cta">Kontakt os</a>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#services">Tjenester</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
-        </ul>
-      </nav>
-      <a href="#kontakt" class="cta">Kontakt os</a>
-    </div>
-  </nav>
+    </header>
 
-  <!-- Hero -->
-  <header class="hero" style="background-image: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png');">
-    <div class="overlay"></div>
-    <div class="hero-box">
-      <h1>Din visuelle partner i grafisk design</h1>
-      <p>
-        Professionelt grafisk design skræddersyet til din virksomhed.<br/>
-        Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.
-      </p>
-      <a href="#kontakt" class="cta">Kontakt os</a>
-    </div>
-  </header>
+    <!-- Callback sektion -->
+    <section class="callback">
+      <div class="callback-box">
+        <p>Vil du have et gratis designforslag? Udfyld her:</p>
+        <form>
+          <input type="text" placeholder="Dit navn" required />
+          <input type="email" placeholder="Din e-mail" required />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
 
-  <!-- Callback sektion -->
-  <section class="callback" id="kontakt">
-    <div class="callback-box">
-      <p>Vil du have et gratis designforslag? Udfyld her:</p>
-      <form>
-        <input type="text" placeholder="Dit navn" required />
-        <input type="email" placeholder="Din e-mail" required />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  </section>
+    <!-- Logos fra Supabase -->
+    <section id="logos" class="logos-section">
+      <div class="logos-container" id="logos-container"></div>
+    </section>
 
-  <!-- Logos fra Supabase -->
-  <section id="logos" class="logos-section">
-    <div class="logos-container" id="logos-container"></div>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <img
+        class="footer-logo"
+        src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png"
+        alt="BareetDesign logo"
+      />
+      <p>© 2025 BareetDesign — Alle rettigheder forbeholdes.</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <img class="footer-logo" src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign logo"/>
-    <p>© 2025 BareetDesign — Alle rettigheder forbeholdes.</p>
-  </footer>
+    <script>
+      // --- Supabase setup ---
+      const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
+      const supabaseKey = "public-anon-key-her"; // skift til din nøgle
+      const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
-  <!-- Supabase script -->
-  <script>
-    const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
-    const supabaseKey = "DIN_PUBLIC_ANON_KEY_HER"; // Skift til din key
-    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+      async function loadLogos() {
+        const { data, error } = await supabase.from("logos").select("*");
+        if (error) {
+          console.error("Fejl ved hentning:", error);
+          return;
+        }
 
-    async function loadLogos() {
-      const { data, error } = await supabase.from("logos").select("*");
-      if(error){
-        console.error("Fejl ved hentning:", error);
-        return;
+        const container = document.getElementById("logos-container");
+        container.innerHTML = "";
+
+        data.forEach((logo) => {
+          const img = document.createElement("img");
+          img.src = logo.image_url;
+          img.alt = logo.name;
+          img.classList.add("about-image-logo");
+          container.appendChild(img);
+        });
       }
-      const container = document.getElementById("logos-container");
-      container.innerHTML = "";
-      data.forEach((logo)=>{
-        const img = document.createElement("img");
-        img.src = logo.image_url;
-        img.alt = logo.name;
-        img.classList.add("about-image-logo");
-        container.appendChild(img);
-      });
-    }
 
-    loadLogos();
-  </script>
-
-</body>
+      loadLogos();
+    </script>
+  </body>
 </html>
