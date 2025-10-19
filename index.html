@@ -14,14 +14,14 @@
   <div class="topbar">
     <div class="topbar-container">
       <div class="socials">
-        <a href="#"><img src="facebook-icon.png" alt="Facebook" /> Facebook</a>
-        <a href="#"><img src="instagram-icon.png" alt="Instagram" /> Instagram</a>
-        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn" /> LinkedIn</a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/16/111/facebook.png"/>Facebook</a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/16/111/instagram-new.png"/>Instagram</a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/16/111/twitter.png"/>Twitter</a>
       </div>
       <div class="contact-info">
-        <span>kontakt@bareetdesign.dk</span>
+        <span>✉ info@bareetdesign.dk</span>
         <span class="divider">|</span>
-        <span>93 95 63 39</span>
+        <span>📞 +45 12 34 56 78</span>
       </div>
     </div>
   </div>
@@ -32,11 +32,13 @@
       <div class="logo">
         <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo" />
       </div>
-      <ul>
-        <li><a href="#services">Tjenester</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
-      </ul>
+      <nav>
+        <ul>
+          <li><a href="#services">Tjenester</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
       <a href="#kontakt" class="cta">Kontakt os</a>
     </div>
   </nav>
@@ -46,13 +48,15 @@
     <div class="overlay"></div>
     <div class="hero-box">
       <h1>Din visuelle partner i grafisk design</h1>
-      <p>Professionelt grafisk design skræddersyet til din virksomhed.<br/>
-      Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
-      <a href="#kontakt" class="btn">Kontakt os</a>
+      <p>
+        Professionelt grafisk design skræddersyet til din virksomhed.<br/>
+        Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.
+      </p>
+      <a href="#kontakt" class="cta">Kontakt os</a>
     </div>
   </header>
 
-  <!-- Callback -->
+  <!-- Callback sektion -->
   <section class="callback" id="kontakt">
     <div class="callback-box">
       <p>Vil du have et gratis designforslag? Udfyld her:</p>
@@ -75,18 +79,21 @@
     <p>© 2025 BareetDesign — Alle rettigheder forbeholdes.</p>
   </footer>
 
-  <!-- Supabase JS -->
+  <!-- Supabase script -->
   <script>
     const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
-    const supabaseKey = "public-anon-key-her"; // <-- indsæt din public anon key
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const supabaseKey = "DIN_PUBLIC_ANON_KEY_HER"; // Skift til din key
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
 
     async function loadLogos() {
       const { data, error } = await supabase.from("logos").select("*");
-      if(error) { console.error(error); return; }
+      if(error){
+        console.error("Fejl ved hentning:", error);
+        return;
+      }
       const container = document.getElementById("logos-container");
       container.innerHTML = "";
-      data.forEach(logo => {
+      data.forEach((logo)=>{
         const img = document.createElement("img");
         img.src = logo.image_url;
         img.alt = logo.name;
@@ -94,6 +101,7 @@
         container.appendChild(img);
       });
     }
+
     loadLogos();
   </script>
 
