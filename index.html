@@ -25,7 +25,7 @@ body{
   overflow-x:hidden;
   background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center top;
   background-size:cover;
-  background-attachment: fixed; /* holder baggrund på plads */
+  background-attachment: fixed;
 }
 
 /* Topbar */
@@ -97,13 +97,31 @@ body{
 .hero-box .btn{background:var(--primary);color:#fff;padding:0.8rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;transition:0.2s;}
 .hero-box .btn:hover{filter:brightness(0.95);}
 
-/* Callback */
-.callback{padding:3rem 1rem;background:#fff;}
-.callback-box{max-width:500px;margin:0 auto;padding:2rem;border-radius:20px;box-shadow:0 12px 35px rgba(0,0,0,0.12);text-align:center;}
-.callback-box form{display:flex;flex-direction:column;gap:1rem;}
-.callback-box input{padding:0.8rem;border-radius:8px;border:1px solid #ddd;font-size:1rem;}
-.callback-box button{padding:0.9rem;border:none;border-radius:8px;background:var(--primary);color:#fff;font-weight:600;cursor:pointer;transition:0.2s;}
-.callback-box button:hover{filter:brightness(0.95);}
+/* Callback / nyt designforslag */
+.callback{padding:4rem 1rem;background:#fff;}
+.callback-box{
+  max-width:600px;
+  margin:0 auto;
+  text-align:center;
+  padding:2rem;
+  border-radius:20px;
+  box-shadow:0 12px 35px rgba(0,0,0,0.12);
+}
+.callback-box img{
+  max-width:100%;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  margin-bottom:1.5rem;
+}
+.callback-box h2{
+  font-size:2rem;
+  color:var(--primary);
+  margin-bottom:0.5rem;
+}
+.callback-box p{
+  font-size:1rem;
+  color:#111;
+}
 
 /* Logos */
 .logos-section{padding:4rem 2rem;text-align:center;}
@@ -113,6 +131,7 @@ body{
 
 /* Footer */
 .footer{background:var(--primary);color:#fff;text-align:center;padding:2rem 1rem;}
+.footer-logo{width:150px;height:auto;margin-bottom:1rem;}
 
 @media(max-width:768px){
   .navbar ul{
@@ -157,15 +176,13 @@ body{
   </div>
 </section>
 
-<!-- Callback -->
+<!-- Ny callback / gratis designforslag -->
 <section class="callback">
   <div class="callback-box">
-    <p>Vil du have et gratis designforslag? Udfyld her:</p>
-    <form>
-      <input type="text" placeholder="Dit navn" required>
-      <input type="email" placeholder="Din e-mail" required>
-      <button type="submit">Send</button>
-    </form>
+    <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesign_Phillip.png" 
+         alt="BareetDesign og Phillip">
+    <h2>Vil du have et gratis designforslag?</h2>
+    <p>BareetDesign og Phillip står klar til at hjælpe dig med et skræddersyet designforslag til din virksomhed.</p>
   </div>
 </section>
 
@@ -182,7 +199,7 @@ body{
 
 <script>
 const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
-const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemVzaWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3NzkyOTIsImV4cCI6MjA3NjM1NTI5Mn0.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemNpc2UiLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc2MDc3OTI5MiwiZXhwIjoyMDc2MzU1MjkyfQ.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac";
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
 async function loadLogos(){
