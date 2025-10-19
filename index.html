@@ -17,209 +17,76 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0;}
-
     body{
-      font-family: "Poppins", sans-serif;
-      color: var(--text-dark);
-      background: url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center center fixed;
-      background-size: cover;
-      padding-top: calc(var(--topbar-height) + var(--navbar-height));
+      font-family:"Poppins",sans-serif;
+      color:var(--text-dark);
+      background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center center fixed;
+      background-size:cover;
+      padding-top:calc(var(--topbar-height) + var(--navbar-height));
       overflow-x:hidden;
     }
 
     /* Topbar */
     .topbar{
-      position: fixed;
-      top:0; left:0; right:0;
-      height: var(--topbar-height);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:0 2rem;
-      z-index:60;
-      background: transparent;
-      color: #fff;
+      position:fixed; top:0; left:0; right:0;
+      height:var(--topbar-height);
+      display:flex; justify-content:space-between; align-items:center;
+      padding:0 2rem; z-index:60;
+      background:transparent;
+      color:#fff;
       font-size:0.95rem;
     }
-
-    .topbar .socials{
-      display:flex;
-      align-items:center;
-      gap:1rem;
-    }
-    .topbar .socials a{
-      display:flex;
-      align-items:center;
-      gap:0.4rem;
-      color:#fff;
-      text-decoration:none;
-      font-weight:500;
-      transition: 0.2s;
-    }
-    .topbar .socials a:hover{color: var(--primary);}
-
-    .topbar .contact-info{
-      display:flex;
-      align-items:center;
-      gap:0.5rem;
-      font-weight:500;
-    }
+    .topbar .socials{display:flex;align-items:center;gap:1rem;}
+    .topbar .contact-info{display:flex;align-items:center;gap:0.5rem;font-weight:500;}
 
     /* Navbar */
     .navbar{
-      position: fixed;
-      top: var(--topbar-height);
-      left:0; right:0;
-      height: var(--navbar-height);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:0 2rem;
-      z-index:50;
-      background: transparent;
+      position:fixed; top:var(--topbar-height); left:0; right:0;
+      height:var(--navbar-height); display:flex;
+      justify-content:space-between; align-items:center; padding:0 2rem; z-index:50;
+      background:transparent;
     }
-
-    .navbar .logo img{
-      width: clamp(160px,14vw,280px);
-    }
-
-    .navbar ul{
-      display:flex;
-      list-style:none;
-      gap:1.5rem;
-      align-items:center;
-    }
-
-    .navbar ul li a{
-      text-decoration:none;
-      color:#fff;
-      font-weight:600;
-      transition:0.2s;
-    }
+    .navbar .logo img{width:clamp(160px,14vw,280px);}
+    .navbar ul{display:flex;list-style:none;gap:1.5rem;align-items:center;}
+    .navbar ul li a{color:#fff;text-decoration:none;font-weight:600;transition:0.2s;}
     .navbar ul li a:hover{opacity:0.85;color:var(--primary);}
-    .cta{
-      background: var(--primary);
-      color:#fff;
-      padding:0.6rem 1rem;
-      border-radius:8px;
-      font-weight:700;
-      text-decoration:none;
-      transition:0.2s;
-    }
+    .cta{background:var(--primary);color:#fff;padding:0.6rem 1rem;border-radius:8px;font-weight:700;text-decoration:none;transition:0.2s;}
     .cta:hover{filter:brightness(0.95);}
 
     /* Hero */
     .hero{
-      min-height: calc(100vh - (var(--topbar-height) + var(--navbar-height)));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      text-align:center;
-      color:#fff;
+      min-height:calc(100vh - (var(--topbar-height) + var(--navbar-height)));
+      display:flex;align-items:center;justify-content:center;position:relative;text-align:center;color:#fff;
     }
-    .hero .overlay{
-      position:absolute;
-      inset:0;
-      background: rgba(0,0,0,0.35);
-      z-index:1;
-    }
+    .hero .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:1;}
     .hero-box{
-      position:relative;
-      z-index:2;
-      max-width:800px;
-      width:90%;
-      padding:2rem;
-      background: rgba(255,255,255,0.8);
-      border-radius:16px;
-      color: var(--text-dark);
-      text-align:center;
-      box-shadow:0 12px 30px rgba(0,0,0,0.12);
+      position:relative; z-index:2;
+      max-width:800px;width:90%;padding:2rem;
+      background: rgba(255,255,255,0.8); border-radius:16px;
+      color:var(--text-dark); text-align:center; box-shadow:0 12px 30px rgba(0,0,0,0.12);
     }
-    .hero-box h1{
-      font-size:clamp(1.6rem,4.5vw,2.6rem);
-      margin-bottom:0.6rem;
-    }
-    .hero-box p{
-      font-size:clamp(1rem,2.4vw,1.15rem);
-      line-height:1.5;
-      margin-bottom:1rem;
-    }
-    .hero-box .btn{
-      background: var(--primary);
-      color:#fff;
-      padding:0.8rem 1.5rem;
-      border-radius:8px;
-      font-weight:600;
-      text-decoration:none;
-      transition:0.2s;
-    }
+    .hero-box h1{font-size:clamp(1.6rem,4.5vw,2.6rem);margin-bottom:0.6rem;}
+    .hero-box p{font-size:clamp(1rem,2.4vw,1.15rem);line-height:1.5;margin-bottom:1rem;}
+    .hero-box .btn{background:var(--primary);color:#fff;padding:0.8rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;transition:0.2s;}
     .hero-box .btn:hover{filter:brightness(0.95);}
 
     /* Callback */
-    .callback{
-      padding:3rem 1rem;
-      background:#fff;
-    }
-    .callback-box{
-      max-width:500px;
-      margin:0 auto;
-      padding:2rem;
-      border-radius:20px;
-      box-shadow:0 12px 35px rgba(0,0,0,0.12);
-      text-align:center;
-    }
-    .callback-box form{
-      display:flex;
-      flex-direction:column;
-      gap:1rem;
-    }
-    .callback-box input{
-      padding:0.8rem;
-      border-radius:8px;
-      border:1px solid #ddd;
-      font-size:1rem;
-    }
-    .callback-box button{
-      padding:0.9rem;
-      border:none;
-      border-radius:8px;
-      background: var(--primary);
-      color:#fff;
-      font-weight:600;
-      cursor:pointer;
-      transition:0.2s;
-    }
+    .callback{padding:3rem 1rem;background:#fff;}
+    .callback-box{max-width:500px;margin:0 auto;padding:2rem;border-radius:20px;box-shadow:0 12px 35px rgba(0,0,0,0.12);text-align:center;}
+    .callback-box form{display:flex;flex-direction:column;gap:1rem;}
+    .callback-box input{padding:0.8rem;border-radius:8px;border:1px solid #ddd;font-size:1rem;}
+    .callback-box button{padding:0.9rem;border:none;border-radius:8px;background:var(--primary);color:#fff;font-weight:600;cursor:pointer;transition:0.2s;}
     .callback-box button:hover{filter:brightness(0.95);}
 
     /* Logos */
-    .logos-section{
-      padding:4rem 2rem;
-      text-align:center;
-    }
-    .logos-container{
-      display:flex;
-      gap:1.5rem;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-    .about-image-logo{
-      width:100px;
-      height:auto;
-      object-fit:contain;
-      transition:transform .25s ease;
-    }
+    .logos-section{padding:4rem 2rem;text-align:center;}
+    .logos-container{display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center;}
+    .about-image-logo{width:100px;height:auto;object-fit:contain;transition:transform .25s ease;}
     .about-image-logo:hover{transform:scale(1.05);}
 
     /* Footer */
-    .footer{
-      background: var(--primary);
-      color:#fff;
-      text-align:center;
-      padding:2rem 1rem;
-    }
+    .footer{background:var(--primary);color:#fff;text-align:center;padding:2rem 1rem;}
 
-    /* Responsive */
     @media(max-width:768px){
       .topbar,.navbar{padding:0 1rem;}
       .hero-box{padding:1.5rem;}
@@ -228,16 +95,12 @@
     }
   </style>
 </head>
-
 <body>
+
   <!-- Topbar -->
   <div class="topbar">
-    <div class="socials" id="socials-container">
-      <!-- Hentes fra Supabase -->
-    </div>
-    <div class="contact-info">
-      kontakt@bareetdesign.dk | 93 95 63 39
-    </div>
+    <div class="socials" id="socials-container"></div>
+    <div class="contact-info">kontakt@bareetdesign.dk | 93 95 63 39</div>
   </div>
 
   <!-- Navbar -->
@@ -258,10 +121,7 @@
     <div class="overlay"></div>
     <div class="hero-box">
       <h1>Din visuelle partner i grafisk design</h1>
-      <p>
-        Professionelt grafisk design skræddersyet til din virksomhed.<br>
-        Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.
-      </p>
+      <p>Professionelt grafisk design skræddersyet til din virksomhed.<br>Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
       <a href="#kontakt" class="btn">Kontakt os</a>
     </div>
   </section>
@@ -290,17 +150,16 @@
   </footer>
 
   <script>
-    // --- Supabase setup ---
     const supabaseUrl = "https://frordwotoqltgszesice.supabase.co";
-    const supabaseKey = "DIN_PUBLIC_ANON_KEY_HER";
+    const supabaseKey = "DIN_PUBLIC_ANON_KEY_HER"; // Sæt din public anon key
     const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-    // Hent logos
-    async function loadLogos() {
-      const { data, error } = await supabase.from("logos").select("*");
-      if(error){console.error(error); return;}
+    // Hent logos fra Supabase
+    async function loadLogos(){
+      const { data, error } = await supabase.from("logos").select("*").order("created_at",{ascending:true});
+      if(error){console.error(error);return;}
       const container = document.getElementById("logos-container");
-      container.innerHTML = "";
+      container.innerHTML="";
       data.forEach(logo=>{
         const img = document.createElement("img");
         img.src = logo.image_url;
@@ -311,17 +170,17 @@
     }
     loadLogos();
 
-    // Hent sociale medier
-    async function loadSocials() {
+    // Hent sociale medier fra Supabase
+    async function loadSocials(){
       const { data, error } = await supabase.from("socials").select("*");
-      if(error){console.error(error); return;}
+      if(error){console.error(error);return;}
       const container = document.getElementById("socials-container");
-      container.innerHTML = "";
+      container.innerHTML="";
       data.forEach(item=>{
         const a = document.createElement("a");
-        a.href = item.link;
+        a.href=item.link;
         a.target="_blank";
-        a.textContent = item.name;
+        a.textContent=item.name;
         container.appendChild(a);
       });
     }
