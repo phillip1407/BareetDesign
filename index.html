@@ -78,42 +78,46 @@ body{
 }
 
 /* Dropdown */
-.dropdown { position: relative; }
-.dropbtn { cursor:pointer; color:#fff; font-weight:600; text-decoration:none; transition:0.2s; }
+.dropdown {
+  position: relative;
+}
+.dropbtn {
+  cursor:pointer;
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  transition: color 0.2s;
+}
 .dropbtn:hover { color:var(--primary); }
 
 .dropdown-content {
+  display: none; /* skjult som standard */
   position: absolute;
   top: 100%;
   left: 0;
   min-width: 180px;
-  border-radius: 8px;
   background: rgba(255,255,255,0.85); /* semitransparent */
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  border-radius: 8px;
   z-index: 10;
+  flex-direction: column;
 }
 .dropdown-content li { list-style:none; }
-.dropdown-content li a{
+.dropdown-content li a {
   display:block;
   padding:0.75rem 1rem;
+  color: var(--text-dark);
   font-weight:500;
-  color:var(--text-dark);
   text-decoration:none;
   border-radius:6px;
   transition: background 0.2s, color 0.2s;
 }
-.dropdown-content li a:hover{
-  background:var(--primary);
+.dropdown-content li a:hover {
+  background: var(--primary);
   color:#fff;
 }
-.dropdown:hover .dropdown-content{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(0);
+.dropdown:hover .dropdown-content {
+  display:flex;
 }
 
 /* CTA knap */
@@ -170,9 +174,7 @@ body{
   .dropdown-content{
     position:static;
     box-shadow:none;
-    transform:none;
-    opacity:1;
-    visibility:visible;
+    display:flex;
   }
   .hero-box{padding:1.5rem;}
   .about-image-logo{width:80px;}
