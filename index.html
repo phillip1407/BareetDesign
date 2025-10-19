@@ -52,10 +52,57 @@ body{
   background:transparent;
 }
 .navbar .logo img{width:clamp(160px,14vw,280px);}
-.navbar ul{display:flex;list-style:none;gap:1.5rem;align-items:center;}
-.navbar ul li a{color:#fff;text-decoration:none;font-weight:600;transition:0.2s;}
-.navbar ul li a:hover{opacity:0.85;color:var(--primary);}
-.cta{background:var(--primary);color:#fff;padding:0.6rem 1rem;border-radius:8px;font-weight:700;text-decoration:none;transition:0.2s;}
+.navbar ul{
+  display:flex; list-style:none; gap:1.5rem; align-items:center; margin:0; padding:0;
+}
+.navbar ul li a{
+  color:#fff; text-decoration:none; font-weight:600; transition:0.2s;
+}
+.navbar ul li a:hover{
+  opacity:0.85; color:var(--primary);
+}
+
+/* Dropdown */
+.dropdown{position:relative;}
+.dropbtn{cursor:pointer;}
+.dropdown-content{
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  min-width:180px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.2);
+  border-radius:8px;
+  z-index:10;
+}
+.dropdown-content li{list-style:none;}
+.dropdown-content li a{
+  color:var(--text-dark);
+  padding:0.75rem 1rem;
+  display:block;
+  text-decoration:none;
+  font-weight:500;
+}
+.dropdown-content li a:hover{
+  background:var(--primary);
+  color:#fff;
+  border-radius:8px;
+}
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+
+/* CTA knap */
+.cta{
+  background:var(--primary);
+  color:#fff;
+  padding:0.6rem 1rem;
+  border-radius:8px;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.2s;
+}
 .cta:hover{filter:brightness(0.95);}
 
 /* Hero */
@@ -69,7 +116,7 @@ body{
   max-width:800px;width:90%;padding:2rem;
   background: transparent; /* Transparent baggrund */
   color:#fff; text-align:center;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6); /* Lidt kontrast for tekst */
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 .hero-box h1{font-size:clamp(1.6rem,4.5vw,2.6rem);margin-bottom:0.6rem;}
 .hero-box p{font-size:clamp(1rem,2.4vw,1.15rem);line-height:1.5;margin-bottom:1rem;}
@@ -94,7 +141,14 @@ body{
 .footer{background:var(--primary);color:#fff;text-align:center;padding:2rem 1rem;}
 
 @media(max-width:768px){
-  .topbar,.navbar{padding:0 1rem;}
+  .navbar ul{
+    flex-direction:column;
+    gap:0;
+  }
+  .dropdown-content{
+    position:static;
+    box-shadow:none;
+  }
   .hero-box{padding:1.5rem;}
   .about-image-logo{width:80px;}
   .navbar ul{gap:1rem;}
@@ -117,9 +171,18 @@ body{
     <div class="logo">
       <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo">
     </div>
-    <ul>
-      <li><a href="#services">Tjenester</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+    <ul class="nav-links">
+      <li><a href="#forside">Forside</a></li>
+      <li class="dropdown">
+        <a href="#services" class="dropbtn">Services</a>
+        <ul class="dropdown-content">
+          <li><a href="#service1">Logo Design</a></li>
+          <li><a href="#service2">Web Design</a></li>
+          <li><a href="#service3">Branding</a></li>
+        </ul>
+      </li>
+      <li><a href="#cases">Cases</a></li>
+      <li><a href="#om">Om BareetDesign</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <a href="#kontakt" class="cta">Kontakt os</a>
