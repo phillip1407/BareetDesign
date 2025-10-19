@@ -18,7 +18,8 @@
 
       body {
         font-family: "Poppins", sans-serif;
-        background: url("baggrundsbillede.png") no-repeat center center fixed;
+        background: url("https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png")
+          no-repeat center center fixed;
         background-size: cover;
         color: white;
         overflow-x: hidden;
@@ -208,7 +209,7 @@
     <!-- Navbar -->
     <div class="navbar">
       <div class="logo">
-        <img src="logo.png" alt="BareetDesign Logo" />
+        <img src="https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/BareetDesignlogo.png" alt="BareetDesign Logo" />
         <h2>BareetDesign</h2>
       </div>
       <div class="menu">
@@ -263,9 +264,10 @@
     <!-- Supabase Integration -->
     <script>
       const { createClient } = supabase;
-      const supabaseUrl = "https://frodwotoqltgszesice.supabase.co";
+      const supabaseUrl = "https://frordwotoqltgszesice.supabase.co"; // ✅ rettet URL
       const supabaseKey =
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZyb3Jkd290b3FsdGdzemVzaWNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA3NzkyOTIsImV4cCI6MjA3NjM1NTI5Mn0.cOL1ND_m4HhqeM5fSTShgAM3qtVSfI9voayLVvJGgac";
+
       const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
       async function loadSocials() {
