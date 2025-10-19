@@ -22,7 +22,8 @@ body{
   font-family:"Poppins",sans-serif;
   color:var(--text-dark);
   background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center top;
-  background-size:cover;
+  background-size: contain; /* Vis hele billedet */
+  background-attachment: scroll; /* Ruller med siden */
   padding-top: calc(var(--topbar-height) + var(--line-height) + var(--navbar-height));
   overflow-x:hidden;
 }
@@ -119,7 +120,6 @@ body{
   min-height:calc(100vh - (var(--topbar-height) + var(--line-height) + var(--navbar-height)));
   display:flex;align-items:center;justify-content:center;position:relative;text-align:center;color:#fff;
 }
-.hero .overlay{display:none;}
 .hero-box{
   position:relative; z-index:2;
   max-width:800px;width:90%;padding:2rem;
