@@ -4,6 +4,47 @@
   --text-dark: #111;
 }
 
+/* --- Topbar --- */
+.topbar {
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+  color: #111;
+  font-size: 0.9rem;
+}
+
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.4rem 1.5rem;
+}
+
+.topbar .socials a {
+  color: #111;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.3s;
+}
+
+.topbar .socials a:hover {
+  color: var(--primary);
+}
+
+.topbar .contact-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topbar .divider {
+  color: #777;
+}
+
 /* --- Generelt layout --- */
 body {
   margin: 0;
@@ -18,7 +59,7 @@ body {
   background: transparent;
   border-bottom: 1px solid rgba(255,255,255,0.15);
   position: absolute;
-  top: 0;
+  top: 40px; /* flyt navbar under topbar */
   width: 100%;
   z-index: 20;
 }
@@ -248,5 +289,10 @@ header .logo img {
 
   .callback-box {
     padding: 1.5rem;
+  }
+
+  .topbar-container {
+    flex-direction: column;
+    gap: 0.4rem;
   }
 }
