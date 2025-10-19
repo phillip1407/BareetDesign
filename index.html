@@ -88,27 +88,29 @@ body{
   top: 100%;
   left: 0;
   min-width: 180px;
-  background: rgba(255,255,255,0.85);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  background: rgba(20, 37, 65, 0.92);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
   border-radius: 8px;
   flex-direction: column;
   z-index: 10;
+  padding: 0.3rem 0;
+  backdrop-filter: blur(6px);
 }
 .dropdown-content li a{
   display:block;
   padding:0.75rem 1rem;
   font-weight:500;
-  color: var(--text-dark);
+  color:#fff;
   text-decoration:none;
   border-radius:6px;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.25s, color 0.25s;
 }
 .dropdown-content li a:hover{
-  background: var(--primary);
+  background: rgba(255,255,255,0.1);
   color:#fff;
 }
 
-/* Vis dropdown kun når man hover over Services */
+/* Vis dropdown kun ved hover */
 .dropdown:hover .dropdown-content{
   display:flex;
 }
@@ -190,13 +192,25 @@ body{
   </div>
   <ul class="nav-links">
     <li><a href="#forside">Forside</a></li>
+
     <li class="dropdown">
       <a href="#services" class="dropbtn">Services</a>
       <ul class="dropdown-content">
         <li><a href="#grafisk">Grafisk Design</a></li>
         <li><a href="#web">Web Design</a></li>
+        <li><a href="#branding">Branding</a></li>
       </ul>
     </li>
+
+    <li class="dropdown">
+      <a href="#produkter" class="dropbtn">Produkter</a>
+      <ul class="dropdown-content">
+        <li><a href="#visitkort">Visitkort</a></li>
+        <li><a href="#plakater">Plakater</a></li>
+        <li><a href="#flyers">Flyers</a></li>
+      </ul>
+    </li>
+
     <li><a href="#cases">Cases</a></li>
     <li><a href="#om">Om BareetDesign</a></li>
     <li><a href="#kontakt">Kontakt</a></li>
