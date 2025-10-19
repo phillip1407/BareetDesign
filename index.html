@@ -21,7 +21,7 @@
 body{
   font-family:"Poppins",sans-serif;
   color:var(--text-dark);
-  background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center center fixed;
+  background:url('https://frordwotoqltgszesice.supabase.co/storage/v1/object/public/Billeder/baggrundsbillede.png') no-repeat center top fixed;
   background-size:cover;
   padding-top: calc(var(--topbar-height) + var(--line-height) + var(--navbar-height));
   overflow-x:hidden;
@@ -67,7 +67,7 @@ body{
   min-height:calc(100vh - (var(--topbar-height) + var(--line-height) + var(--navbar-height)));
   display:flex;align-items:center;justify-content:center;position:relative;text-align:center;color:#fff;
 }
-.hero .overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);z-index:1;}
+.hero .overlay{display:none;}
 .hero-box{
   position:relative; z-index:2;
   max-width:800px;width:90%;padding:2rem;
@@ -130,7 +130,6 @@ body{
 
   <!-- Hero -->
   <section class="hero">
-    <div class="overlay"></div>
     <div class="hero-box">
       <h1>Din visuelle partner i grafisk design</h1>
       <p>Professionelt grafisk design skræddersyet til din virksomhed.<br>Vi designer alt fra logoer og hjemmesider til kampagner og branding — altid med dit brand i fokus.</p>
